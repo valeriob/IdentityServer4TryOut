@@ -1,0 +1,2114 @@
+2018-04-28 15:47:42.612 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 15:47:42.675 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 15:47:42.677 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 15:47:42.679 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 15:47:42.682 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 15:47:50.237 +02:00 [DBG] Starting token cleanup
+2018-04-28 15:47:50.493 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 15:47:50.499 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 15:47:50.499 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 15:47:50.500 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 15:47:50.519 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 15:48:04.134 +02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-04-28 15:48:04.140 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-04-28 15:48:04.140 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-04-28 15:48:04.145 +02:00 [DBG] Start discovery request
+2018-04-28 15:48:04.391 +02:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-04-28 15:48:04.863 +02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-04-28 15:48:04.865 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-04-28 15:48:04.865 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-04-28 15:48:04.869 +02:00 [DBG] Start key discovery request
+2018-04-28 15:48:05.007 +02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-04-28 15:48:05.011 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-04-28 15:48:05.011 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-04-28 15:48:05.016 +02:00 [DBG] Start authorize request
+2018-04-28 15:48:05.026 +02:00 [DBG] No user present in authorize request
+2018-04-28 15:48:05.032 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:48:05.274 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:48:05.284 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:48:05.285 +02:00 [DBG] No PKCE used.
+2018-04-28 15:48:05.327 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:05.381 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:05.398 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:05.402 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:05.414 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:48:05.431 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEYVMw23fIJmEPPSzlNhL2CYVDb_Crw1osOHVqbzIkxifasDIVxNn1yybMdSBmm_pe0WD9pOpOANJJ9lpeBAnYFzrpqZZyQ6M8rmgLlFJ_-22VBeLoOeZtMwiSOWLgzXH3TCrCSPyL8lAHmcoR6PYnhUdK0E29JQgVCatJgkZ9sOMEYKjwvd30TEAoSGIAp2WXN4NkXr5AbFj3_JfIO3pDI8UHJCnGztKQSBWuk5PlwjyZdGzCLaqKyOWy-177inTotj_zOhDFE-ba0tfZhSdftlbZhMGhK7uMypZJVrQv-5ktqzUW7ssTTWMIlUZh4wrXA",
+  "Nonce": "636605200849572229.M2FmNmMwZTktMjc0Ny00MDAxLTk1YjAtZTE5ZTM5NjI1MDhmYTQ2ODQ4ODUtYTllZC00N2VhLWI2YTItZDA2ZmQ1M2EwZjEz",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605200849572229.M2FmNmMwZTktMjc0Ny00MDAxLTk1YjAtZTE5ZTM5NjI1MDhmYTQ2ODQ4ODUtYTllZC00N2VhLWI2YTItZDA2ZmQ1M2EwZjEz",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEYVMw23fIJmEPPSzlNhL2CYVDb_Crw1osOHVqbzIkxifasDIVxNn1yybMdSBmm_pe0WD9pOpOANJJ9lpeBAnYFzrpqZZyQ6M8rmgLlFJ_-22VBeLoOeZtMwiSOWLgzXH3TCrCSPyL8lAHmcoR6PYnhUdK0E29JQgVCatJgkZ9sOMEYKjwvd30TEAoSGIAp2WXN4NkXr5AbFj3_JfIO3pDI8UHJCnGztKQSBWuk5PlwjyZdGzCLaqKyOWy-177inTotj_zOhDFE-ba0tfZhSdftlbZhMGhK7uMypZJVrQv-5ktqzUW7ssTTWMIlUZh4wrXA",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 15:48:05.443 +02:00 [INF] Showing login: User is not authenticated
+2018-04-28 15:48:05.541 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:48:05.548 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:48:05.548 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:48:05.548 +02:00 [DBG] No PKCE used.
+2018-04-28 15:48:05.552 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:05.557 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:05.561 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:05.567 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:05.567 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:48:05.578 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:48:10.593 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 15:48:10.736 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 15:48:10.738 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 15:48:10.739 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 15:48:10.739 +02:00 [DBG] Adding auth_time claim with value: 1524923290
+2018-04-28 15:48:10.749 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 15:48:10.786 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD1QH10MUO:00000002",
+  "TimeStamp": "2018-04-28T13:48:10Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:48:10.798 +02:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-04-28 15:48:10.799 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-04-28 15:48:10.800 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-04-28 15:48:10.807 +02:00 [DBG] Start authorize callback request
+2018-04-28 15:48:10.814 +02:00 [DBG] No user present in authorize request
+2018-04-28 15:48:10.814 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:48:10.819 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:48:10.820 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:48:10.820 +02:00 [DBG] No PKCE used.
+2018-04-28 15:48:10.824 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:10.829 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:10.831 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:10.836 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:10.836 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:48:10.836 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEYVMw23fIJmEPPSzlNhL2CYVDb_Crw1osOHVqbzIkxifasDIVxNn1yybMdSBmm_pe0WD9pOpOANJJ9lpeBAnYFzrpqZZyQ6M8rmgLlFJ_-22VBeLoOeZtMwiSOWLgzXH3TCrCSPyL8lAHmcoR6PYnhUdK0E29JQgVCatJgkZ9sOMEYKjwvd30TEAoSGIAp2WXN4NkXr5AbFj3_JfIO3pDI8UHJCnGztKQSBWuk5PlwjyZdGzCLaqKyOWy-177inTotj_zOhDFE-ba0tfZhSdftlbZhMGhK7uMypZJVrQv-5ktqzUW7ssTTWMIlUZh4wrXA",
+  "Nonce": "636605200849572229.M2FmNmMwZTktMjc0Ny00MDAxLTk1YjAtZTE5ZTM5NjI1MDhmYTQ2ODQ4ODUtYTllZC00N2VhLWI2YTItZDA2ZmQ1M2EwZjEz",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605200849572229.M2FmNmMwZTktMjc0Ny00MDAxLTk1YjAtZTE5ZTM5NjI1MDhmYTQ2ODQ4ODUtYTllZC00N2VhLWI2YTItZDA2ZmQ1M2EwZjEz",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEYVMw23fIJmEPPSzlNhL2CYVDb_Crw1osOHVqbzIkxifasDIVxNn1yybMdSBmm_pe0WD9pOpOANJJ9lpeBAnYFzrpqZZyQ6M8rmgLlFJ_-22VBeLoOeZtMwiSOWLgzXH3TCrCSPyL8lAHmcoR6PYnhUdK0E29JQgVCatJgkZ9sOMEYKjwvd30TEAoSGIAp2WXN4NkXr5AbFj3_JfIO3pDI8UHJCnGztKQSBWuk5PlwjyZdGzCLaqKyOWy-177inTotj_zOhDFE-ba0tfZhSdftlbZhMGhK7uMypZJVrQv-5ktqzUW7ssTTWMIlUZh4wrXA",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 15:48:10.837 +02:00 [INF] Showing login: User is not authenticated
+2018-04-28 15:48:10.845 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:48:10.852 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:48:10.852 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:48:10.852 +02:00 [DBG] No PKCE used.
+2018-04-28 15:48:10.857 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:10.863 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:10.867 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:48:10.871 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:48:10.872 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:48:10.877 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:48:54.956 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 15:48:58.366 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 15:48:58.391 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 15:48:58.391 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 15:48:58.391 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 15:48:58.391 +02:00 [DBG] Adding auth_time claim with value: 1524923338
+2018-04-28 15:48:58.392 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 15:48:58.394 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD1QH10MUM:00000005",
+  "TimeStamp": "2018-04-28T13:48:58Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:48:58.410 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:48:58.410 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:48:58.448 +02:00 [DBG] 0 persisted grants found for 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:49:05.323 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:49:05.324 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:49:05.324 +02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-04-28 15:49:05.324 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-04-28 15:49:05.324 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-04-28 15:49:05.324 +02:00 [DBG] Start authorize request
+2018-04-28 15:49:05.325 +02:00 [DBG] User in authorize request: 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:49:05.325 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:49:05.331 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:49:05.331 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:49:05.331 +02:00 [DBG] No PKCE used.
+2018-04-28 15:49:05.335 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:49:05.342 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:49:05.345 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:49:05.350 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:49:05.351 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:49:05.351 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEYY__sr7N7jyW--ZPzJY9V_hWvFEwbaNer6PIM_-jVzX_31WdTuI_OBEdgMBTHOlTAtCxxqwsjA5DPqWsSeb_DzPCPLBG7dNNUY_QiC9AUrdvI4Txc-9XbLKnjCNDicvNw-XTrcGG5yCbHOjiOX44P9FwO4IK47oYbN1tvulYyDq4KcO8GqSFo8PO9WrdRMv1oTGEWdFa4acxL264Hm2BZwVucsyI6tEb9kK-lML37CfUFkYfj4gH4xbjVEG5KEdl3YETqBxm34gQ-YHnHcrgKykrM70zgdNWV232xB98Z2bVZaRz-FjGj9bT4onRcqn0s",
+  "Nonce": "636605201453149303.M2FkNjliZDEtN2ExZS00YzA1LTljN2EtZDFkOGM3OTVhY2VmYzRmMjhlYzQtMWE0NS00YzY4LWFkNTItYzA5MzUyY2Q1ZGVh",
+  "SessionId": "5334d022d6b549689a84b11c010c11f4",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605201453149303.M2FkNjliZDEtN2ExZS00YzA1LTljN2EtZDFkOGM3OTVhY2VmYzRmMjhlYzQtMWE0NS00YzY4LWFkNTItYzA5MzUyY2Q1ZGVh",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEYY__sr7N7jyW--ZPzJY9V_hWvFEwbaNer6PIM_-jVzX_31WdTuI_OBEdgMBTHOlTAtCxxqwsjA5DPqWsSeb_DzPCPLBG7dNNUY_QiC9AUrdvI4Txc-9XbLKnjCNDicvNw-XTrcGG5yCbHOjiOX44P9FwO4IK47oYbN1tvulYyDq4KcO8GqSFo8PO9WrdRMv1oTGEWdFa4acxL264Hm2BZwVucsyI6tEb9kK-lML37CfUFkYfj4gH4xbjVEG5KEdl3YETqBxm34gQ-YHnHcrgKykrM70zgdNWV232xB98Z2bVZaRz-FjGj9bT4onRcqn0s",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 15:49:05.380 +02:00 [DBG] Client is configured to not require consent, no consent is required
+2018-04-28 15:49:05.389 +02:00 [DBG] Creating Hybrid Flow response.
+2018-04-28 15:49:05.434 +02:00 [DBG] 0ihSFKTuCOCbwVMYCj2ZkjrhitdlqQkzXLeDO1iSE7s= not found in database
+2018-04-28 15:49:05.474 +02:00 [DBG] Creating Implicit Flow response.
+2018-04-28 15:49:05.488 +02:00 [DBG] Getting claims for identity token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393 and client: mvc
+2018-04-28 15:49:05.492 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 15:49:05.571 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "hybrid",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****YWaw"
+    },
+    {
+      "TokenType": "code",
+      "TokenValue": "****f609"
+    }
+  ],
+  "ActivityId": "0HLDD1QH10MUO:00000005",
+  "TimeStamp": "2018-04-28T13:49:05Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:49:05.579 +02:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "ClientId": "mvc",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEYY__sr7N7jyW--ZPzJY9V_hWvFEwbaNer6PIM_-jVzX_31WdTuI_OBEdgMBTHOlTAtCxxqwsjA5DPqWsSeb_DzPCPLBG7dNNUY_QiC9AUrdvI4Txc-9XbLKnjCNDicvNw-XTrcGG5yCbHOjiOX44P9FwO4IK47oYbN1tvulYyDq4KcO8GqSFo8PO9WrdRMv1oTGEWdFa4acxL264Hm2BZwVucsyI6tEb9kK-lML37CfUFkYfj4gH4xbjVEG5KEdl3YETqBxm34gQ-YHnHcrgKykrM70zgdNWV232xB98Z2bVZaRz-FjGj9bT4onRcqn0s",
+  "Scope": "openid profile api1 offline_access"
+}
+2018-04-28 15:49:05.602 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 15:49:05.602 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 15:49:11.552 +02:00 [DBG] Request path /connect/token matched to endpoint type Token
+2018-04-28 15:49:11.557 +02:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2018-04-28 15:49:11.557 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2018-04-28 15:49:11.567 +02:00 [DBG] Start token request.
+2018-04-28 15:49:11.575 +02:00 [DBG] Start client validation
+2018-04-28 15:49:11.581 +02:00 [DBG] Start parsing Basic Authentication secret
+2018-04-28 15:49:11.585 +02:00 [DBG] Start parsing for secret in post body
+2018-04-28 15:49:11.586 +02:00 [DBG] Parser found secret: PostBodySecretParser
+2018-04-28 15:49:11.586 +02:00 [DBG] Secret id found: mvc
+2018-04-28 15:49:11.594 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:49:11.605 +02:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-04-28 15:49:11.607 +02:00 [DBG] Client validation success
+2018-04-28 15:49:11.613 +02:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "mvc",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLDD1QH10MUN:00000006",
+  "TimeStamp": "2018-04-28T13:49:11Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:49:11.621 +02:00 [DBG] Start token request validation
+2018-04-28 15:49:11.634 +02:00 [DBG] Start validation of authorization code token request
+2018-04-28 15:49:11.658 +02:00 [DBG] 0ihSFKTuCOCbwVMYCj2ZkjrhitdlqQkzXLeDO1iSE7s= found in database: true
+2018-04-28 15:49:11.703 +02:00 [DBG] removing 0ihSFKTuCOCbwVMYCj2ZkjrhitdlqQkzXLeDO1iSE7s= persisted grant from database
+2018-04-28 15:49:11.723 +02:00 [DBG] Validation of authorization code token request success
+2018-04-28 15:49:11.730 +02:00 [INF] Token request validation success
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "GrantType": "authorization_code",
+  "AuthorizationCode": "524db0945667850d2e1c88eaae83b7bb290f642a90b20f483a1dc1712073f609",
+  "Raw": {
+    "client_id": "mvc",
+    "client_secret": "***REDACTED***",
+    "code": "524db0945667850d2e1c88eaae83b7bb290f642a90b20f483a1dc1712073f609",
+    "grant_type": "authorization_code",
+    "redirect_uri": "https://localhost:44300/signin-oidc"
+  }
+}
+2018-04-28 15:49:11.758 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:49:11.762 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:49:11.772 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:49:11.788 +02:00 [DBG] Getting claims for access token for client: mvc
+2018-04-28 15:49:11.790 +02:00 [DBG] Getting claims for access token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:49:11.813 +02:00 [DBG] Creating refresh token
+2018-04-28 15:49:11.814 +02:00 [DBG] Setting an absolute lifetime: 2592000
+2018-04-28 15:49:11.837 +02:00 [DBG] RhJxqjFWq/L149kfbl/NM3y+9BqSzYfAGHlgl53OQSE= not found in database
+2018-04-28 15:49:11.861 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:49:11.864 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:49:11.868 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:49:11.869 +02:00 [DBG] Getting claims for identity token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393 and client: mvc
+2018-04-28 15:49:11.869 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 15:49:11.874 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "Endpoint": "Token",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "authorization_code",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****5LHg"
+    },
+    {
+      "TokenType": "refresh_token",
+      "TokenValue": "****b178"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****pOdw"
+    }
+  ],
+  "ActivityId": "0HLDD1QH10MUN:00000006",
+  "TimeStamp": "2018-04-28T13:49:11Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:49:11.876 +02:00 [DBG] Token request success.
+2018-04-28 15:50:04.408 +02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-04-28 15:50:04.409 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-04-28 15:50:04.409 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-04-28 15:50:04.409 +02:00 [DBG] Start discovery request
+2018-04-28 15:50:04.416 +02:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-04-28 15:50:04.587 +02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-04-28 15:50:04.587 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-04-28 15:50:04.587 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-04-28 15:50:04.588 +02:00 [DBG] Start key discovery request
+2018-04-28 15:50:04.628 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:50:04.629 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:50:04.629 +02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-04-28 15:50:04.629 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-04-28 15:50:04.629 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-04-28 15:50:04.629 +02:00 [DBG] Start authorize request
+2018-04-28 15:50:04.630 +02:00 [DBG] User in authorize request: 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:50:04.630 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:50:04.639 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:04.640 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:50:04.640 +02:00 [DBG] No PKCE used.
+2018-04-28 15:50:04.644 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:04.649 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:04.652 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:04.657 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:04.657 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:50:04.658 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEYsuYkMO9yqu9osnCeBuVfTspVVs9qfy_FwZnintgMjviDvtUO236QdoDKS9l-4GBUqnMIctcU1Q3Ikli6bHb8NnuAHrEvJ20lzvyybl3nCs-Qz6NHZ_hKB10leCTuYOGFAs2Hhc8noTUELcz6hsBboTgw2eB-sQLEZF8xv78TPZ1ibdrZV1Yi2FO-gytucKMvu3rJ_Jnjv7Yf2dWotqUS6_n0Apmjl1Vzc8YLapsCet8Nssn22ISnsYmN8wA6CINu9CQOHuxJ44KJVcOKl6X4Z5gYEnhMkkaAwf0wfxCUh4gm1zpxuzf10FX3PtcqXzkA",
+  "Nonce": "636605202046078365.NTliNGVkMTQtNmU4YS00ZGE3LTk3NzQtMzZjYzhlNWU4OWNmNjc4MDUxMjktZWUwYi00ODk0LWE2MzctZDg1ODcxYjI3YWY1",
+  "SessionId": "5334d022d6b549689a84b11c010c11f4",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605202046078365.NTliNGVkMTQtNmU4YS00ZGE3LTk3NzQtMzZjYzhlNWU4OWNmNjc4MDUxMjktZWUwYi00ODk0LWE2MzctZDg1ODcxYjI3YWY1",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEYsuYkMO9yqu9osnCeBuVfTspVVs9qfy_FwZnintgMjviDvtUO236QdoDKS9l-4GBUqnMIctcU1Q3Ikli6bHb8NnuAHrEvJ20lzvyybl3nCs-Qz6NHZ_hKB10leCTuYOGFAs2Hhc8noTUELcz6hsBboTgw2eB-sQLEZF8xv78TPZ1ibdrZV1Yi2FO-gytucKMvu3rJ_Jnjv7Yf2dWotqUS6_n0Apmjl1Vzc8YLapsCet8Nssn22ISnsYmN8wA6CINu9CQOHuxJ44KJVcOKl6X4Z5gYEnhMkkaAwf0wfxCUh4gm1zpxuzf10FX3PtcqXzkA",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 15:50:04.662 +02:00 [DBG] Client is configured to not require consent, no consent is required
+2018-04-28 15:50:04.663 +02:00 [DBG] Creating Hybrid Flow response.
+2018-04-28 15:50:04.675 +02:00 [DBG] kAC9UtU/CRe2OZEdxALsGURmYraqfXLpQStiYK/cwiY= not found in database
+2018-04-28 15:50:04.689 +02:00 [DBG] Creating Implicit Flow response.
+2018-04-28 15:50:04.690 +02:00 [DBG] Getting claims for identity token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393 and client: mvc
+2018-04-28 15:50:04.690 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 15:50:04.693 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "hybrid",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****eONg"
+    },
+    {
+      "TokenType": "code",
+      "TokenValue": "****fb94"
+    }
+  ],
+  "ActivityId": "0HLDD1QH10MUO:00000007",
+  "TimeStamp": "2018-04-28T13:50:04Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:50:04.694 +02:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "ClientId": "mvc",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEYsuYkMO9yqu9osnCeBuVfTspVVs9qfy_FwZnintgMjviDvtUO236QdoDKS9l-4GBUqnMIctcU1Q3Ikli6bHb8NnuAHrEvJ20lzvyybl3nCs-Qz6NHZ_hKB10leCTuYOGFAs2Hhc8noTUELcz6hsBboTgw2eB-sQLEZF8xv78TPZ1ibdrZV1Yi2FO-gytucKMvu3rJ_Jnjv7Yf2dWotqUS6_n0Apmjl1Vzc8YLapsCet8Nssn22ISnsYmN8wA6CINu9CQOHuxJ44KJVcOKl6X4Z5gYEnhMkkaAwf0wfxCUh4gm1zpxuzf10FX3PtcqXzkA",
+  "Scope": "openid profile api1 offline_access"
+}
+2018-04-28 15:50:05.211 +02:00 [DBG] Request path /connect/token matched to endpoint type Token
+2018-04-28 15:50:05.211 +02:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2018-04-28 15:50:05.212 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2018-04-28 15:50:05.212 +02:00 [DBG] Start token request.
+2018-04-28 15:50:05.212 +02:00 [DBG] Start client validation
+2018-04-28 15:50:05.212 +02:00 [DBG] Start parsing Basic Authentication secret
+2018-04-28 15:50:05.212 +02:00 [DBG] Start parsing for secret in post body
+2018-04-28 15:50:05.224 +02:00 [DBG] Parser found secret: PostBodySecretParser
+2018-04-28 15:50:05.224 +02:00 [DBG] Secret id found: mvc
+2018-04-28 15:50:05.232 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:05.232 +02:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-04-28 15:50:05.232 +02:00 [DBG] Client validation success
+2018-04-28 15:50:05.233 +02:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "mvc",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLDD1QH10MUN:00000008",
+  "TimeStamp": "2018-04-28T13:50:05Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:50:05.233 +02:00 [DBG] Start token request validation
+2018-04-28 15:50:05.233 +02:00 [DBG] Start validation of authorization code token request
+2018-04-28 15:50:05.236 +02:00 [DBG] kAC9UtU/CRe2OZEdxALsGURmYraqfXLpQStiYK/cwiY= found in database: true
+2018-04-28 15:50:05.257 +02:00 [DBG] removing kAC9UtU/CRe2OZEdxALsGURmYraqfXLpQStiYK/cwiY= persisted grant from database
+2018-04-28 15:50:05.269 +02:00 [DBG] Validation of authorization code token request success
+2018-04-28 15:50:05.270 +02:00 [INF] Token request validation success
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "GrantType": "authorization_code",
+  "AuthorizationCode": "1125070db435f406b8680757847c840c7f3dd092ec560c8eb8ae41109df8fb94",
+  "Raw": {
+    "client_id": "mvc",
+    "client_secret": "***REDACTED***",
+    "code": "1125070db435f406b8680757847c840c7f3dd092ec560c8eb8ae41109df8fb94",
+    "grant_type": "authorization_code",
+    "redirect_uri": "https://localhost:44300/signin-oidc"
+  }
+}
+2018-04-28 15:50:05.275 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:05.280 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:05.285 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:05.285 +02:00 [DBG] Getting claims for access token for client: mvc
+2018-04-28 15:50:05.286 +02:00 [DBG] Getting claims for access token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:50:05.294 +02:00 [DBG] Creating refresh token
+2018-04-28 15:50:05.295 +02:00 [DBG] Setting an absolute lifetime: 2592000
+2018-04-28 15:50:05.310 +02:00 [DBG] NqRvZ2A0naO2Gk3kQOkk7FIlMkCZdvJ20dYtCFYaw9Q= not found in database
+2018-04-28 15:50:05.326 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:05.330 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:05.335 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:05.335 +02:00 [DBG] Getting claims for identity token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393 and client: mvc
+2018-04-28 15:50:05.335 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 15:50:05.339 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "Endpoint": "Token",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "authorization_code",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****KWmg"
+    },
+    {
+      "TokenType": "refresh_token",
+      "TokenValue": "****8f0c"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****aFsw"
+    }
+  ],
+  "ActivityId": "0HLDD1QH10MUN:00000008",
+  "TimeStamp": "2018-04-28T13:50:05Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:50:05.339 +02:00 [DBG] Token request success.
+2018-04-28 15:50:32.185 +02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-04-28 15:50:32.186 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-04-28 15:50:32.186 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-04-28 15:50:32.186 +02:00 [DBG] Start discovery request
+2018-04-28 15:50:32.194 +02:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-04-28 15:50:32.597 +02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-04-28 15:50:32.597 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-04-28 15:50:32.597 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-04-28 15:50:32.597 +02:00 [DBG] Start key discovery request
+2018-04-28 15:50:32.671 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:50:32.671 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 15:50:32.671 +02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-04-28 15:50:32.671 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-04-28 15:50:32.672 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-04-28 15:50:32.672 +02:00 [DBG] Start authorize request
+2018-04-28 15:50:32.672 +02:00 [DBG] User in authorize request: 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:50:32.672 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 15:50:32.679 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:32.679 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 15:50:32.679 +02:00 [DBG] No PKCE used.
+2018-04-28 15:50:32.682 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:32.688 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:32.691 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:32.696 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:32.696 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 15:50:32.696 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEbUlUQc34AyC0cqjqlzjJvfuAWTJAy9szWswTSqJj4q-XIuMO2JLC-lzNaOtK3xygaQqOuNwwzOyo3E8ohV3YxLioo74xkWQXFNo57aEmFTYuyjyVRzYWsYqmfy2MYA2PoNm5TLySnDMyRnJjP51bCYI24vJUmNg1rn3J03tqHez9ttGRbkv2f6zrjwc-pQgIhqXYXpKUBI8fVqCvvK00RBI6QhZX6juF6k7Rv6xPNkz7OMAJFwsYGMV2tLWbIjPXUPXOqJNxiYtiXA5wjK7xUYz-oWjmJ3VKd6YaVn-JchTF5SqYAQJtoKHd5D5CMtJQ0",
+  "Nonce": "636605202326322780.OTM1YWYyMmQtZjNkYi00YTU4LTliMzAtNjBjMGU0ZGVkNmRhZjRjNzFiZmUtOTM3ZS00YzM2LTk3MzAtYTViZmIyNjFhM2Yx",
+  "SessionId": "5334d022d6b549689a84b11c010c11f4",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605202326322780.OTM1YWYyMmQtZjNkYi00YTU4LTliMzAtNjBjMGU0ZGVkNmRhZjRjNzFiZmUtOTM3ZS00YzM2LTk3MzAtYTViZmIyNjFhM2Yx",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEbUlUQc34AyC0cqjqlzjJvfuAWTJAy9szWswTSqJj4q-XIuMO2JLC-lzNaOtK3xygaQqOuNwwzOyo3E8ohV3YxLioo74xkWQXFNo57aEmFTYuyjyVRzYWsYqmfy2MYA2PoNm5TLySnDMyRnJjP51bCYI24vJUmNg1rn3J03tqHez9ttGRbkv2f6zrjwc-pQgIhqXYXpKUBI8fVqCvvK00RBI6QhZX6juF6k7Rv6xPNkz7OMAJFwsYGMV2tLWbIjPXUPXOqJNxiYtiXA5wjK7xUYz-oWjmJ3VKd6YaVn-JchTF5SqYAQJtoKHd5D5CMtJQ0",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 15:50:32.700 +02:00 [DBG] Client is configured to not require consent, no consent is required
+2018-04-28 15:50:32.700 +02:00 [DBG] Creating Hybrid Flow response.
+2018-04-28 15:50:32.712 +02:00 [DBG] J4YNCKIG5Vl+eTMebOI6tnHnWYULOmgHI6c1chLY+dQ= not found in database
+2018-04-28 15:50:32.725 +02:00 [DBG] Creating Implicit Flow response.
+2018-04-28 15:50:32.725 +02:00 [DBG] Getting claims for identity token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393 and client: mvc
+2018-04-28 15:50:32.725 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 15:50:32.729 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "hybrid",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****8oSA"
+    },
+    {
+      "TokenType": "code",
+      "TokenValue": "****d2da"
+    }
+  ],
+  "ActivityId": "0HLDD1QH10MUO:00000009",
+  "TimeStamp": "2018-04-28T13:50:32Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:50:32.729 +02:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "ClientId": "mvc",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEbUlUQc34AyC0cqjqlzjJvfuAWTJAy9szWswTSqJj4q-XIuMO2JLC-lzNaOtK3xygaQqOuNwwzOyo3E8ohV3YxLioo74xkWQXFNo57aEmFTYuyjyVRzYWsYqmfy2MYA2PoNm5TLySnDMyRnJjP51bCYI24vJUmNg1rn3J03tqHez9ttGRbkv2f6zrjwc-pQgIhqXYXpKUBI8fVqCvvK00RBI6QhZX6juF6k7Rv6xPNkz7OMAJFwsYGMV2tLWbIjPXUPXOqJNxiYtiXA5wjK7xUYz-oWjmJ3VKd6YaVn-JchTF5SqYAQJtoKHd5D5CMtJQ0",
+  "Scope": "openid profile api1 offline_access"
+}
+2018-04-28 15:50:34.866 +02:00 [DBG] Request path /connect/token matched to endpoint type Token
+2018-04-28 15:50:34.867 +02:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2018-04-28 15:50:34.867 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2018-04-28 15:50:34.867 +02:00 [DBG] Start token request.
+2018-04-28 15:50:34.867 +02:00 [DBG] Start client validation
+2018-04-28 15:50:34.867 +02:00 [DBG] Start parsing Basic Authentication secret
+2018-04-28 15:50:34.867 +02:00 [DBG] Start parsing for secret in post body
+2018-04-28 15:50:34.869 +02:00 [DBG] Parser found secret: PostBodySecretParser
+2018-04-28 15:50:34.869 +02:00 [DBG] Secret id found: mvc
+2018-04-28 15:50:34.876 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:34.876 +02:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-04-28 15:50:34.877 +02:00 [DBG] Client validation success
+2018-04-28 15:50:34.877 +02:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "mvc",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLDD1QH10MUN:0000000A",
+  "TimeStamp": "2018-04-28T13:50:34Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:50:34.877 +02:00 [DBG] Start token request validation
+2018-04-28 15:50:34.877 +02:00 [DBG] Start validation of authorization code token request
+2018-04-28 15:50:34.880 +02:00 [DBG] J4YNCKIG5Vl+eTMebOI6tnHnWYULOmgHI6c1chLY+dQ= found in database: true
+2018-04-28 15:50:34.895 +02:00 [DBG] removing J4YNCKIG5Vl+eTMebOI6tnHnWYULOmgHI6c1chLY+dQ= persisted grant from database
+2018-04-28 15:50:34.915 +02:00 [DBG] Validation of authorization code token request success
+2018-04-28 15:50:34.915 +02:00 [INF] Token request validation success
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "GrantType": "authorization_code",
+  "AuthorizationCode": "1b0d7c94334deeadca8fd05de81f7ba943a4333b712b82b6f70da5af7073d2da",
+  "Raw": {
+    "client_id": "mvc",
+    "client_secret": "***REDACTED***",
+    "code": "1b0d7c94334deeadca8fd05de81f7ba943a4333b712b82b6f70da5af7073d2da",
+    "grant_type": "authorization_code",
+    "redirect_uri": "https://localhost:44300/signin-oidc"
+  }
+}
+2018-04-28 15:50:34.922 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:34.925 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:34.931 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:34.931 +02:00 [DBG] Getting claims for access token for client: mvc
+2018-04-28 15:50:34.931 +02:00 [DBG] Getting claims for access token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 15:50:34.943 +02:00 [DBG] Creating refresh token
+2018-04-28 15:50:34.943 +02:00 [DBG] Setting an absolute lifetime: 2592000
+2018-04-28 15:50:34.957 +02:00 [DBG] 7+bwoKyaTeGyTdAWK16Cbchg9su5IobiRKlejIItEWs= not found in database
+2018-04-28 15:50:35.005 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:35.017 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:35.023 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 15:50:35.023 +02:00 [DBG] Getting claims for identity token for subject: 31e5cf83-4718-40bd-83aa-0c04c6970393 and client: mvc
+2018-04-28 15:50:35.023 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 15:50:35.027 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "Endpoint": "Token",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "authorization_code",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****SmgQ"
+    },
+    {
+      "TokenType": "refresh_token",
+      "TokenValue": "****bdbf"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****evmA"
+    }
+  ],
+  "ActivityId": "0HLDD1QH10MUN:0000000A",
+  "TimeStamp": "2018-04-28T13:50:35Z",
+  "ProcessId": 22392,
+  "LocalIpAddress": "127.0.0.1:16856",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 15:50:35.027 +02:00 [DBG] Token request success.
+2018-04-28 15:50:35.084 +02:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-04-28 15:50:35.087 +02:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-04-28 15:50:35.088 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-04-28 15:50:35.103 +02:00 [DBG] Start userinfo request
+2018-04-28 15:50:35.110 +02:00 [DBG] Bearer token found in header
+2018-04-28 15:50:35.218 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:35.230 +02:00 [DBG] mvc found in database: true
+2018-04-28 15:50:35.236 +02:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-04-28 15:50:35.244 +02:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1524923434,
+    "exp": 1524927034,
+    "iss": "http://localhost:5000",
+    "aud": [
+      "http://localhost:5000/resources",
+      "api1"
+    ],
+    "client_id": "mvc",
+    "sub": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+    "auth_time": 1524923338,
+    "idp": "local",
+    "scope": [
+      "openid",
+      "profile",
+      "api1",
+      "offline_access"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-04-28 15:50:35.259 +02:00 [DBG] Creating userinfo response
+2018-04-28 15:50:35.264 +02:00 [DBG] Scopes in access token: openid profile api1 offline_access
+2018-04-28 15:50:35.268 +02:00 [DBG] Scopes in access token: openid profile api1 offline_access
+2018-04-28 15:50:35.274 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:35.276 +02:00 [DBG] Requested claim types: sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2018-04-28 15:50:35.276 +02:00 [DBG] Scopes in access token: openid profile api1 offline_access
+2018-04-28 15:50:35.279 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 15:50:35.286 +02:00 [INF] Profile service returned to the following claim types: sub name given_name family_name website preferred_username
+2018-04-28 15:50:35.286 +02:00 [DBG] End userinfo request
+2018-04-28 15:56:54.367 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 15:56:54.417 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 15:56:54.421 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 15:56:54.423 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 15:56:54.425 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 15:57:09.274 +02:00 [ERR] Failed executing DbCommand (82ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (Size = 2000), @p12='?' (Size = 200), @p13='?' (Size = 200), @p14='?' (Size = 200), @p15='?' (Size = 2000), @p16='?' (DbType = Int32), @p17='?' (Size = 1000), @p18='?' (DbType = Boolean), @p19='?' (DbType = Boolean), @p20='?' (DbType = Boolean), @p21='?' (Size = 2000), @p22='?' (DbType = Int32), @p23='?' (DbType = Boolean), @p24='?' (Size = 2000), @p25='?' (Size = 200), @p26='?' (Size = 200), @p27='?' (DbType = Int32), @p28='?' (DbType = Int32), @p29='?' (DbType = Boolean), @p30='?' (DbType = Boolean), @p31='?' (DbType = Boolean), @p32='?' (DbType = Int32), @p33='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Clients] ([AbsoluteRefreshTokenLifetime], [AccessTokenLifetime], [AccessTokenType], [AllowAccessTokensViaBrowser], [AllowOfflineAccess], [AllowPlainTextPkce], [AllowRememberConsent], [AlwaysIncludeUserClaimsInIdToken], [AlwaysSendClientClaims], [AuthorizationCodeLifetime], [BackChannelLogoutSessionRequired], [BackChannelLogoutUri], [ClientClaimsPrefix], [ClientId], [ClientName], [ClientUri], [ConsentLifetime], [Description], [EnableLocalLogin], [Enabled], [FrontChannelLogoutSessionRequired], [FrontChannelLogoutUri], [IdentityTokenLifetime], [IncludeJwtId], [LogoUri], [PairWiseSubjectSalt], [ProtocolType], [RefreshTokenExpiration], [RefreshTokenUsage], [RequireClientSecret], [RequireConsent], [RequirePkce], [SlidingRefreshTokenLifetime], [UpdateAccessTokenClaimsOnRefresh])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33);
+SELECT [Id]
+FROM [Clients]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.Clients'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:c778e340-e81e-487a-97a1-089b9089bc72
+Error Number:515,State:2,Class:16
+2018-04-28 15:57:09.400 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.Clients'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.Clients'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-04-28 15:58:02.717 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 15:58:02.762 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 15:58:02.762 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 15:58:02.762 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 15:58:02.762 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 15:58:02.885 +02:00 [DBG] Starting token cleanup
+2018-04-28 15:58:06.017 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 15:58:06.024 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 15:58:06.024 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 15:58:06.028 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 15:58:06.045 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 15:58:14.473 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 15:58:14.477 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 15:58:14.480 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 15:58:14.487 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 15:58:14.492 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 15:59:16.269 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 15:59:16.323 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 15:59:16.325 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 15:59:16.327 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 15:59:16.329 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:01:17.910 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:01:17.960 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:01:17.962 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:01:17.964 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:01:17.968 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:01:41.263 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:01:41.305 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:01:41.305 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:01:41.305 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:01:41.305 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:01:41.430 +02:00 [DBG] Starting token cleanup
+2018-04-28 16:01:44.846 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 16:01:44.851 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 16:01:44.852 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 16:01:44.856 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:01:44.858 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:02:55.833 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:02:55.883 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:02:55.891 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:02:55.895 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:02:55.898 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:03:10.600 +02:00 [ERR] Failed executing DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AspNetRoles' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:57263532-a51c-417f-befd-04856e44e9f0
+Error Number:2714,State:6,Class:16
+2018-04-28 16:03:23.407 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:03:23.449 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:03:23.449 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:03:23.449 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:03:23.449 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:03:23.575 +02:00 [DBG] Starting token cleanup
+2018-04-28 16:04:12.206 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:04:12.265 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:04:12.268 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:04:12.269 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:04:12.271 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:04:32.660 +02:00 [ERR] Failed executing DbCommand (87ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 450), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 450), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 450), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 450), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 450), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 450), @p35='?' (Size = 450), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p36='?' (Size = 4000), @p23='?' (Size = 256), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = DateTimeOffset), @p27='?' (Size = 256), @p28='?' (Size = 256), @p29='?' (Size = 4000), @p30='?' (Size = 4000), @p31='?' (DbType = Boolean), @p32='?' (Size = 4000), @p33='?' (DbType = Boolean), @p34='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AspNetUserClaims] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2),
+(@p9, @p10, @p11, 3),
+(@p12, @p13, @p14, 4),
+(@p15, @p16, @p17, 5),
+(@p18, @p19, @p20, 6)) AS i ([ClaimType], [ClaimValue], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ClaimType], [ClaimValue], [UserId])
+VALUES (i.[ClaimType], i.[ClaimValue], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AspNetUserClaims] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p21, [ConcurrencyStamp] = @p22, [Email] = @p23, [EmailConfirmed] = @p24, [LockoutEnabled] = @p25, [LockoutEnd] = @p26, [NormalizedEmail] = @p27, [NormalizedUserName] = @p28, [PasswordHash] = @p29, [PhoneNumber] = @p30, [PhoneNumberConfirmed] = @p31, [SecurityStamp] = @p32, [TwoFactorEnabled] = @p33, [UserName] = @p34
+WHERE [Id] = @p35 AND [ConcurrencyStamp] = @p36;
+SELECT @@ROWCOUNT;
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__17.MoveNext()
+ClientConnectionId:70d37819-01b1-4758-85e5-272f1bf809b3
+Error Number:515,State:2,Class:16
+2018-04-28 16:04:32.771 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'IdentityServerWithAspIdAndEF.Data.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__79.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__77.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__52.MoveNext()
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__79.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__77.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__52.MoveNext()
+2018-04-28 16:04:49.028 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:04:49.079 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:04:49.079 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:04:49.079 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:04:49.079 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:04:49.231 +02:00 [DBG] Starting token cleanup
+2018-04-28 16:04:51.660 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 16:04:51.668 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 16:04:51.669 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 16:04:51.672 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:04:51.690 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:05:53.536 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:05:53.537 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:05:53.717 +02:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@__subjectId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "x"."Key", "x"."ClientId", "x"."CreationTime", "x"."Data", "x"."Expiration", "x"."SubjectId", "x"."Type"
+FROM "PersistedGrants" AS "x"
+WHERE "x"."SubjectId" = @__subjectId_0
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: PersistedGrants'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2018-04-28 16:05:53.777 +02:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer4.EntityFramework.DbContexts.PersistedGrantDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: PersistedGrants'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: PersistedGrants'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2018-04-28 16:05:57.561 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:05:57.564 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:05:57.588 +02:00 [DBG] 0 persisted grants found for 31e5cf83-4718-40bd-83aa-0c04c6970393
+2018-04-28 16:06:11.585 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:06:11.585 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:06:13.110 +02:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:06:13.110 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:06:13.111 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:06:13.153 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 16:06:13.154 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 16:06:13.154 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 16:06:13.192 +02:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "31e5cf83-4718-40bd-83aa-0c04c6970393",
+  "DisplayName": "Bob Smith",
+  "ActivityId": "0HLDD240N8CDO:00000006",
+  "TimeStamp": "2018-04-28T14:06:13Z",
+  "ProcessId": 32840,
+  "LocalIpAddress": "127.0.0.1:12391",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:06:13.497 +02:00 [DBG] Request path /connect/endsession/callback matched to endpoint type Endsession
+2018-04-28 16:06:13.505 +02:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionCallbackEndpoint
+2018-04-28 16:06:13.506 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionCallbackEndpoint for /connect/endsession/callback
+2018-04-28 16:06:13.511 +02:00 [DBG] Processing signout callback request
+2018-04-28 16:06:14.318 +02:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@__clientId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "x"."Id", "x"."AbsoluteRefreshTokenLifetime", "x"."AccessTokenLifetime", "x"."AccessTokenType", "x"."AllowAccessTokensViaBrowser", "x"."AllowOfflineAccess", "x"."AllowPlainTextPkce", "x"."AllowRememberConsent", "x"."AlwaysIncludeUserClaimsInIdToken", "x"."AlwaysSendClientClaims", "x"."AuthorizationCodeLifetime", "x"."BackChannelLogoutSessionRequired", "x"."BackChannelLogoutUri", "x"."ClientClaimsPrefix", "x"."ClientId", "x"."ClientName", "x"."ClientUri", "x"."ConsentLifetime", "x"."Description", "x"."EnableLocalLogin", "x"."Enabled", "x"."FrontChannelLogoutSessionRequired", "x"."FrontChannelLogoutUri", "x"."IdentityTokenLifetime", "x"."IncludeJwtId", "x"."LogoUri", "x"."PairWiseSubjectSalt", "x"."ProtocolType", "x"."RefreshTokenExpiration", "x"."RefreshTokenUsage", "x"."RequireClientSecret", "x"."RequireConsent", "x"."RequirePkce", "x"."SlidingRefreshTokenLifetime", "x"."UpdateAccessTokenClaimsOnRefresh"
+FROM "Clients" AS "x"
+WHERE "x"."ClientId" = @__clientId_0
+ORDER BY "x"."Id"
+LIMIT 1
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2018-04-28 16:06:14.335 +02:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2018-04-28 16:06:14.387 +02:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+2018-04-28 16:06:14.472 +02:00 [INF] {
+  "Name": "Unhandled Exception",
+  "Category": "Error",
+  "EventType": "Error",
+  "Id": 3000,
+  "Details": "Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.\r\n   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)\r\n   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)\r\n   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)\r\n   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()\r\n   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()\r\n   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)\r\n   at lambda_method(Closure )\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()\r\n   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)\r\n   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)\r\n   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)\r\n   at IdentityServer4.EntityFramework.Stores.ClientStore.FindClientByIdAsync(String clientId)\r\n   at IdentityServer4.Stores.IClientStoreExtensions.<FindEnabledClientByIdAsync>d__0.MoveNext() in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Extensions\\IClientStoreExtensions.cs:line 23\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at IdentityServer4.Validation.EndSessionRequestValidator.<GetClientEndSessionUrlsAsync>d__13.MoveNext() in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Validation\\EndSessionRequestValidator.cs:line 192\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at IdentityServer4.Validation.EndSessionRequestValidator.<ValidateCallbackAsync>d__12.MoveNext() in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Validation\\EndSessionRequestValidator.cs:line 178\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at IdentityServer4.Endpoints.EndSessionCallbackEndpoint.<ProcessAsync>d__4.MoveNext() in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Endpoints\\EndSessionCallbackEndpoint.cs:line 44\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at IdentityServer4.Hosting.IdentityServerMiddleware.<Invoke>d__3.MoveNext() in C:\\local\\identity\\server4\\IdentityServer4\\src\\IdentityServer4\\Hosting\\IdentityServerMiddleware.cs:line 54",
+  "Message": "SQLite Error 1: 'no such table: Clients'.",
+  "ActivityId": "0HLDD240N8CDO:00000007",
+  "TimeStamp": "2018-04-28T14:06:14Z",
+  "ProcessId": 32840,
+  "LocalIpAddress": "127.0.0.1:12391",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:06:14.475 +02:00 [FTL] Unhandled exception: SQLite Error 1: 'no such table: Clients'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clients'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at IdentityServer4.EntityFramework.Stores.ClientStore.FindClientByIdAsync(String clientId)
+   at IdentityServer4.Stores.IClientStoreExtensions.<FindEnabledClientByIdAsync>d__0.MoveNext() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Extensions\IClientStoreExtensions.cs:line 23
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at IdentityServer4.Validation.EndSessionRequestValidator.<GetClientEndSessionUrlsAsync>d__13.MoveNext() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Validation\EndSessionRequestValidator.cs:line 192
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at IdentityServer4.Validation.EndSessionRequestValidator.<ValidateCallbackAsync>d__12.MoveNext() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Validation\EndSessionRequestValidator.cs:line 178
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at IdentityServer4.Endpoints.EndSessionCallbackEndpoint.<ProcessAsync>d__4.MoveNext() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Endpoints\EndSessionCallbackEndpoint.cs:line 44
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.<Invoke>d__3.MoveNext() in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Hosting\IdentityServerMiddleware.cs:line 54
+2018-04-28 16:06:16.603 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:06:21.837 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:06:21.940 +02:00 [ERR] An error occurred using the connection to database 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838' on server '(localdb)\mssqllocaldb'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838" requested by the login. The login failed.
+Login failed for user 'VALERIO-PC\Valerio'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenDbConnectionAsync>d__48.MoveNext()
+ClientConnectionId:b6914680-697d-4fca-8888-5409a4bea83c
+Error Number:4060,State:1,Class:11
+2018-04-28 16:06:22.006 +02:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServerWithAspIdAndEF.Data.ApplicationDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838" requested by the login. The login failed.
+Login failed for user 'VALERIO-PC\Valerio'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenDbConnectionAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenAsync>d__45.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<BufferlessMoveNext>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<MoveNext>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<FirstOrDefault_>d__165`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+ClientConnectionId:b6914680-697d-4fca-8888-5409a4bea83c
+Error Number:4060,State:1,Class:11
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838" requested by the login. The login failed.
+Login failed for user 'VALERIO-PC\Valerio'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenDbConnectionAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenAsync>d__45.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<BufferlessMoveNext>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<MoveNext>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<FirstOrDefault_>d__165`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+ClientConnectionId:b6914680-697d-4fca-8888-5409a4bea83c
+Error Number:4060,State:1,Class:11
+2018-04-28 16:06:22.159 +02:00 [ERR] An exception occurred in the database while iterating the results of a query for context type 'IdentityServerWithAspIdAndEF.Data.ApplicationDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838" requested by the login. The login failed.
+Login failed for user 'VALERIO-PC\Valerio'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenDbConnectionAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenAsync>d__45.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<BufferlessMoveNext>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<MoveNext>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<FirstOrDefault_>d__165`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<ExecuteSingletonAsyncQuery>d__21`1.MoveNext()
+ClientConnectionId:b6914680-697d-4fca-8888-5409a4bea83c
+Error Number:4060,State:1,Class:11
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838" requested by the login. The login failed.
+Login failed for user 'VALERIO-PC\Valerio'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenDbConnectionAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.<OpenAsync>d__45.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<BufferlessMoveNext>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.<MoveNext>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.<FirstOrDefault_>d__165`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.<MoveNext>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.<MoveNextCore>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.<MoveNext>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.<MoveNext>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<ExecuteSingletonAsyncQuery>d__21`1.MoveNext()
+ClientConnectionId:b6914680-697d-4fca-8888-5409a4bea83c
+Error Number:4060,State:1,Class:11
+2018-04-28 16:06:27.000 +02:00 [INF] {
+  "Name": "User Login Failure",
+  "Category": "Authentication",
+  "EventType": "Failure",
+  "Id": 1001,
+  "Username": "bob",
+  "Endpoint": "UI",
+  "Message": "invalid credentials",
+  "ActivityId": "0HLDD240N8CDO:0000000D",
+  "TimeStamp": "2018-04-28T14:06:26Z",
+  "ProcessId": 32840,
+  "LocalIpAddress": "127.0.0.1:12391",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:06:30.830 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:06:30.833 +02:00 [INF] {
+  "Name": "User Login Failure",
+  "Category": "Authentication",
+  "EventType": "Failure",
+  "Id": 1001,
+  "Username": "bob",
+  "Endpoint": "UI",
+  "Message": "invalid credentials",
+  "ActivityId": "0HLDD240N8CDO:0000000E",
+  "TimeStamp": "2018-04-28T14:06:30Z",
+  "ProcessId": 32840,
+  "LocalIpAddress": "127.0.0.1:12391",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:06:33.943 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:06:33.947 +02:00 [INF] {
+  "Name": "User Login Failure",
+  "Category": "Authentication",
+  "EventType": "Failure",
+  "Id": 1001,
+  "Username": "bob",
+  "Endpoint": "UI",
+  "Message": "invalid credentials",
+  "ActivityId": "0HLDD240N8CDO:0000000F",
+  "TimeStamp": "2018-04-28T14:06:33Z",
+  "ProcessId": 32840,
+  "LocalIpAddress": "127.0.0.1:12391",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:07:15.305 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:07:15.369 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:07:15.371 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:07:15.379 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:07:15.383 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:07:32.878 +02:00 [ERR] Failed executing DbCommand (83ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 450), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 450), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 450), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 450), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 450), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 450), @p35='?' (Size = 450), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p36='?' (Size = 4000), @p23='?' (Size = 256), @p24='?' (DbType = Boolean), @p25='?' (DbType = Boolean), @p26='?' (DbType = DateTimeOffset), @p27='?' (Size = 256), @p28='?' (Size = 256), @p29='?' (Size = 4000), @p30='?' (Size = 4000), @p31='?' (DbType = Boolean), @p32='?' (Size = 4000), @p33='?' (DbType = Boolean), @p34='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [AspNetUserClaims] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2),
+(@p9, @p10, @p11, 3),
+(@p12, @p13, @p14, 4),
+(@p15, @p16, @p17, 5),
+(@p18, @p19, @p20, 6)) AS i ([ClaimType], [ClaimValue], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ClaimType], [ClaimValue], [UserId])
+VALUES (i.[ClaimType], i.[ClaimValue], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [AspNetUserClaims] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p21, [ConcurrencyStamp] = @p22, [Email] = @p23, [EmailConfirmed] = @p24, [LockoutEnabled] = @p25, [LockoutEnd] = @p26, [NormalizedEmail] = @p27, [NormalizedUserName] = @p28, [PasswordHash] = @p29, [PhoneNumber] = @p30, [PhoneNumberConfirmed] = @p31, [SecurityStamp] = @p32, [TwoFactorEnabled] = @p33, [UserName] = @p34
+WHERE [Id] = @p35 AND [ConcurrencyStamp] = @p36;
+SELECT @@ROWCOUNT;
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__17.MoveNext()
+ClientConnectionId:b27c0f99-554a-4b74-9824-86474f046444
+Error Number:515,State:2,Class:16
+2018-04-28 16:07:32.994 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'IdentityServerWithAspIdAndEF.Data.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__79.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__77.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__52.MoveNext()
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'Id', table 'aspnet-WebApplication2-AC2B563B-8A48-415D-8265-C68F54444838.dbo.AspNetUserClaims'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.<ExecuteAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.<ExecuteAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.<ExecuteAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.<ExecuteAsync>d__7`2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__79.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<SaveChangesAsync>d__77.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.EntityFrameworkCore.DbContext.<SaveChangesAsync>d__52.MoveNext()
+2018-04-28 16:08:23.007 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:08:23.052 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:08:23.052 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:08:23.053 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:08:23.053 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:08:23.193 +02:00 [DBG] Starting token cleanup
+2018-04-28 16:08:25.466 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 16:08:25.472 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 16:08:25.473 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 16:08:25.476 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:08:25.493 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:14:29.588 +02:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-04-28 16:14:29.647 +02:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-04-28 16:14:29.649 +02:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-04-28 16:14:29.651 +02:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-04-28 16:14:29.655 +02:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-04-28 16:14:57.312 +02:00 [DBG] Starting token cleanup
+2018-04-28 16:15:28.737 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 16:15:28.745 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 16:15:28.751 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 16:15:28.756 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:15:28.758 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2018-04-28 16:15:42.413 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:15:43.074 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:15:43.087 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 16:15:43.089 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 16:15:43.093 +02:00 [DBG] Adding auth_time claim with value: 1524924943
+2018-04-28 16:15:43.111 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:15:43.233 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD29LU61OS:00000003",
+  "TimeStamp": "2018-04-28T14:15:43Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:15:43.257 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:15:43.259 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:15:43.450 +02:00 [DBG] 0 persisted grants found for 5451c1c5-f9c3-4030-a470-da75fb405cda
+2018-04-28 16:15:57.127 +02:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-04-28 16:15:57.139 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-04-28 16:15:57.141 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-04-28 16:15:57.147 +02:00 [DBG] Start discovery request
+2018-04-28 16:15:57.988 +02:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-04-28 16:15:58.237 +02:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2018-04-28 16:15:58.240 +02:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2018-04-28 16:15:58.242 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2018-04-28 16:15:58.248 +02:00 [DBG] Start key discovery request
+2018-04-28 16:15:58.315 +02:00 [DBG] Request path /connect/authorize matched to endpoint type Authorize
+2018-04-28 16:15:58.322 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeEndpoint
+2018-04-28 16:15:58.326 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeEndpoint for /connect/authorize
+2018-04-28 16:15:58.332 +02:00 [DBG] Start authorize request
+2018-04-28 16:15:58.342 +02:00 [DBG] No user present in authorize request
+2018-04-28 16:15:58.351 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 16:15:58.802 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:15:58.810 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 16:15:58.814 +02:00 [DBG] No PKCE used.
+2018-04-28 16:15:58.878 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:15:58.951 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:15:58.983 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:15:59.004 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:15:59.019 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 16:15:59.044 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "anonymous",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEaCs-wWlxKBBgvVGtsUHtp3C7uaW4-ZhmLw3OCznXRQ8Hl4kJa8eNxr1qfWspN-OvJWTZmwfo-RYzvVUv-V5RNrOeUF1Gt3QgpB6Z73gOdKdxsukdss7Cwsrj8cvy5-XkG92__OStLufdQdyYH_2hKQHz9O9b5JU6gP-JjWSNoPtuhtMbAx7TUBdX07CA-xhKVr2U1Xu1wRLxUf4bUsrf7xzLuWx3xiaCBc3QY01iuE5IAG1DlmIo1oiCjTVQaPaV1m-6q4mB_lHoSJXf2Dq5SYmSrTmf3x_ScozidCDXLFPjXNqXMCIOoep8LpVSCSpb4",
+  "Nonce": "636605217582989262.Nzc4M2ZlZGEtYmQ3Mi00YzIyLWIxOTYtMDQyZTJjNjQzOWZkYmNhNGRmMDYtZmFhMi00MWE0LWI0ZjctNmRiYmM5ZTliZDhm",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605217582989262.Nzc4M2ZlZGEtYmQ3Mi00YzIyLWIxOTYtMDQyZTJjNjQzOWZkYmNhNGRmMDYtZmFhMi00MWE0LWI0ZjctNmRiYmM5ZTliZDhm",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEaCs-wWlxKBBgvVGtsUHtp3C7uaW4-ZhmLw3OCznXRQ8Hl4kJa8eNxr1qfWspN-OvJWTZmwfo-RYzvVUv-V5RNrOeUF1Gt3QgpB6Z73gOdKdxsukdss7Cwsrj8cvy5-XkG92__OStLufdQdyYH_2hKQHz9O9b5JU6gP-JjWSNoPtuhtMbAx7TUBdX07CA-xhKVr2U1Xu1wRLxUf4bUsrf7xzLuWx3xiaCBc3QY01iuE5IAG1DlmIo1oiCjTVQaPaV1m-6q4mB_lHoSJXf2Dq5SYmSrTmf3x_ScozidCDXLFPjXNqXMCIOoep8LpVSCSpb4",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 16:15:59.060 +02:00 [INF] Showing login: User is not authenticated
+2018-04-28 16:15:59.150 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 16:15:59.202 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:15:59.205 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 16:15:59.208 +02:00 [DBG] No PKCE used.
+2018-04-28 16:15:59.222 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:15:59.244 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:15:59.256 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:15:59.274 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:15:59.277 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 16:15:59.307 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:04.150 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:16:04.333 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:16:04.335 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 16:16:04.337 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 16:16:04.339 +02:00 [DBG] Adding auth_time claim with value: 1524924964
+2018-04-28 16:16:04.341 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:16:04.390 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD29LU61OS:0000000A",
+  "TimeStamp": "2018-04-28T14:16:04Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:16:04.429 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:16:04.431 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:16:04.433 +02:00 [DBG] Request path /connect/authorize/callback matched to endpoint type Authorize
+2018-04-28 16:16:04.436 +02:00 [DBG] Endpoint enabled: Authorize, successfully created handler: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint
+2018-04-28 16:16:04.438 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.AuthorizeCallbackEndpoint for /connect/authorize/callback
+2018-04-28 16:16:04.447 +02:00 [DBG] Start authorize callback request
+2018-04-28 16:16:04.455 +02:00 [DBG] User in authorize request: 5451c1c5-f9c3-4030-a470-da75fb405cda
+2018-04-28 16:16:04.457 +02:00 [DBG] Start authorize request protocol validation
+2018-04-28 16:16:04.487 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:04.489 +02:00 [DBG] Checking for PKCE parameters
+2018-04-28 16:16:04.491 +02:00 [DBG] No PKCE used.
+2018-04-28 16:16:04.502 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:16:04.521 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:16:04.534 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:16:04.552 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:16:04.554 +02:00 [DBG] Calling into custom validator: IdentityServer4.Validation.DefaultCustomAuthorizeRequestValidator
+2018-04-28 16:16:04.556 +02:00 [INF] ValidatedAuthorizeRequest
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "AllowedRedirectUris": [
+    "https://localhost:44300/signin-oidc"
+  ],
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "ResponseType": "code id_token",
+  "ResponseMode": "form_post",
+  "GrantType": "hybrid",
+  "RequestedScopes": "openid profile api1 offline_access",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEaCs-wWlxKBBgvVGtsUHtp3C7uaW4-ZhmLw3OCznXRQ8Hl4kJa8eNxr1qfWspN-OvJWTZmwfo-RYzvVUv-V5RNrOeUF1Gt3QgpB6Z73gOdKdxsukdss7Cwsrj8cvy5-XkG92__OStLufdQdyYH_2hKQHz9O9b5JU6gP-JjWSNoPtuhtMbAx7TUBdX07CA-xhKVr2U1Xu1wRLxUf4bUsrf7xzLuWx3xiaCBc3QY01iuE5IAG1DlmIo1oiCjTVQaPaV1m-6q4mB_lHoSJXf2Dq5SYmSrTmf3x_ScozidCDXLFPjXNqXMCIOoep8LpVSCSpb4",
+  "Nonce": "636605217582989262.Nzc4M2ZlZGEtYmQ3Mi00YzIyLWIxOTYtMDQyZTJjNjQzOWZkYmNhNGRmMDYtZmFhMi00MWE0LWI0ZjctNmRiYmM5ZTliZDhm",
+  "SessionId": "c8141acf6e07d10d825aeaa756c88cec",
+  "Raw": {
+    "client_id": "mvc",
+    "redirect_uri": "https://localhost:44300/signin-oidc",
+    "response_type": "code id_token",
+    "scope": "openid profile api1 offline_access",
+    "response_mode": "form_post",
+    "nonce": "636605217582989262.Nzc4M2ZlZGEtYmQ3Mi00YzIyLWIxOTYtMDQyZTJjNjQzOWZkYmNhNGRmMDYtZmFhMi00MWE0LWI0ZjctNmRiYmM5ZTliZDhm",
+    "state": "CfDJ8CjN0PN13HtLnCz6UfFXQEaCs-wWlxKBBgvVGtsUHtp3C7uaW4-ZhmLw3OCznXRQ8Hl4kJa8eNxr1qfWspN-OvJWTZmwfo-RYzvVUv-V5RNrOeUF1Gt3QgpB6Z73gOdKdxsukdss7Cwsrj8cvy5-XkG92__OStLufdQdyYH_2hKQHz9O9b5JU6gP-JjWSNoPtuhtMbAx7TUBdX07CA-xhKVr2U1Xu1wRLxUf4bUsrf7xzLuWx3xiaCBc3QY01iuE5IAG1DlmIo1oiCjTVQaPaV1m-6q4mB_lHoSJXf2Dq5SYmSrTmf3x_ScozidCDXLFPjXNqXMCIOoep8LpVSCSpb4",
+    "x-client-SKU": "ID_NET451",
+    "x-client-ver": "5.2.0.0"
+  }
+}
+2018-04-28 16:16:04.678 +02:00 [DBG] Client is configured to not require consent, no consent is required
+2018-04-28 16:16:04.689 +02:00 [DBG] Creating Hybrid Flow response.
+2018-04-28 16:16:04.746 +02:00 [DBG] 8hnbZiwfemwmPqKElN/bpEeRmJTewWRwE9jJe/Uv0vs= not found in database
+2018-04-28 16:16:04.816 +02:00 [DBG] Creating Implicit Flow response.
+2018-04-28 16:16:04.834 +02:00 [DBG] Getting claims for identity token for subject: 5451c1c5-f9c3-4030-a470-da75fb405cda and client: mvc
+2018-04-28 16:16:04.840 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 16:16:04.943 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "Endpoint": "Authorize",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "hybrid",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****P_8Q"
+    },
+    {
+      "TokenType": "code",
+      "TokenValue": "****7a94"
+    }
+  ],
+  "ActivityId": "0HLDD29LU61OS:0000000B",
+  "TimeStamp": "2018-04-28T14:16:04Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:16:04.952 +02:00 [INF] Authorize endpoint response
+{
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "ClientId": "mvc",
+  "RedirectUri": "https://localhost:44300/signin-oidc",
+  "State": "CfDJ8CjN0PN13HtLnCz6UfFXQEaCs-wWlxKBBgvVGtsUHtp3C7uaW4-ZhmLw3OCznXRQ8Hl4kJa8eNxr1qfWspN-OvJWTZmwfo-RYzvVUv-V5RNrOeUF1Gt3QgpB6Z73gOdKdxsukdss7Cwsrj8cvy5-XkG92__OStLufdQdyYH_2hKQHz9O9b5JU6gP-JjWSNoPtuhtMbAx7TUBdX07CA-xhKVr2U1Xu1wRLxUf4bUsrf7xzLuWx3xiaCBc3QY01iuE5IAG1DlmIo1oiCjTVQaPaV1m-6q4mB_lHoSJXf2Dq5SYmSrTmf3x_ScozidCDXLFPjXNqXMCIOoep8LpVSCSpb4",
+  "Scope": "openid profile api1 offline_access"
+}
+2018-04-28 16:16:04.988 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:16:04.990 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:16:05.421 +02:00 [DBG] Request path /connect/token matched to endpoint type Token
+2018-04-28 16:16:05.428 +02:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2018-04-28 16:16:05.431 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2018-04-28 16:16:05.443 +02:00 [DBG] Start token request.
+2018-04-28 16:16:05.452 +02:00 [DBG] Start client validation
+2018-04-28 16:16:05.461 +02:00 [DBG] Start parsing Basic Authentication secret
+2018-04-28 16:16:05.467 +02:00 [DBG] Start parsing for secret in post body
+2018-04-28 16:16:05.469 +02:00 [DBG] Parser found secret: PostBodySecretParser
+2018-04-28 16:16:05.472 +02:00 [DBG] Secret id found: mvc
+2018-04-28 16:16:05.503 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:05.516 +02:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2018-04-28 16:16:05.519 +02:00 [DBG] Client validation success
+2018-04-28 16:16:05.527 +02:00 [INF] {
+  "Name": "Client Authentication Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1010,
+  "ClientId": "mvc",
+  "AuthenticationMethod": "SharedSecret",
+  "ActivityId": "0HLDD29LU61OS:0000000C",
+  "TimeStamp": "2018-04-28T14:16:05Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:16:05.536 +02:00 [DBG] Start token request validation
+2018-04-28 16:16:05.551 +02:00 [DBG] Start validation of authorization code token request
+2018-04-28 16:16:05.582 +02:00 [DBG] 8hnbZiwfemwmPqKElN/bpEeRmJTewWRwE9jJe/Uv0vs= found in database: true
+2018-04-28 16:16:05.637 +02:00 [DBG] removing 8hnbZiwfemwmPqKElN/bpEeRmJTewWRwE9jJe/Uv0vs= persisted grant from database
+2018-04-28 16:16:05.710 +02:00 [DBG] Validation of authorization code token request success
+2018-04-28 16:16:05.721 +02:00 [INF] Token request validation success
+{
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "GrantType": "authorization_code",
+  "AuthorizationCode": "5c8ab78d92af63270cbe21718a666b1683b6d67781dd124fca9c76fd7db57a94",
+  "Raw": {
+    "client_id": "mvc",
+    "client_secret": "***REDACTED***",
+    "code": "5c8ab78d92af63270cbe21718a666b1683b6d67781dd124fca9c76fd7db57a94",
+    "grant_type": "authorization_code",
+    "redirect_uri": "https://localhost:44300/signin-oidc"
+  }
+}
+2018-04-28 16:16:05.779 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:05.790 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:16:05.814 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:16:05.833 +02:00 [DBG] Getting claims for access token for client: mvc
+2018-04-28 16:16:05.836 +02:00 [DBG] Getting claims for access token for subject: 5451c1c5-f9c3-4030-a470-da75fb405cda
+2018-04-28 16:16:05.949 +02:00 [DBG] Creating refresh token
+2018-04-28 16:16:05.953 +02:00 [DBG] Setting an absolute lifetime: 2592000
+2018-04-28 16:16:05.988 +02:00 [DBG] V7yz4ajp4KQGJpgKElQyNAUGcS3aJABDgPVOOY9OPek= not found in database
+2018-04-28 16:16:06.039 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:06.052 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:16:06.079 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:16:06.083 +02:00 [DBG] Getting claims for identity token for subject: 5451c1c5-f9c3-4030-a470-da75fb405cda and client: mvc
+2018-04-28 16:16:06.086 +02:00 [DBG] In addition to an id_token, an access_token was requested. No claims other than sub are included in the id_token. To obtain more user claims, either use the user info endpoint or set AlwaysIncludeUserClaimsInIdToken on the client configuration.
+2018-04-28 16:16:06.094 +02:00 [INF] {
+  "Name": "Token Issued Success",
+  "Category": "Token",
+  "EventType": "Success",
+  "Id": 2000,
+  "ClientId": "mvc",
+  "ClientName": "MVC Client",
+  "Endpoint": "Token",
+  "Scopes": "openid profile api1 offline_access",
+  "GrantType": "authorization_code",
+  "Tokens": [
+    {
+      "TokenType": "id_token",
+      "TokenValue": "****whjQ"
+    },
+    {
+      "TokenType": "refresh_token",
+      "TokenValue": "****76d5"
+    },
+    {
+      "TokenType": "access_token",
+      "TokenValue": "****T7GA"
+    }
+  ],
+  "ActivityId": "0HLDD29LU61OS:0000000C",
+  "TimeStamp": "2018-04-28T14:16:06Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:16:06.098 +02:00 [DBG] Token request success.
+2018-04-28 16:16:06.124 +02:00 [DBG] Request path /connect/userinfo matched to endpoint type Userinfo
+2018-04-28 16:16:06.129 +02:00 [DBG] Endpoint enabled: Userinfo, successfully created handler: IdentityServer4.Endpoints.UserInfoEndpoint
+2018-04-28 16:16:06.132 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.UserInfoEndpoint for /connect/userinfo
+2018-04-28 16:16:06.146 +02:00 [DBG] Start userinfo request
+2018-04-28 16:16:06.153 +02:00 [DBG] Bearer token found in header
+2018-04-28 16:16:06.268 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:06.307 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:06.358 +02:00 [DBG] Calling into custom token validator: IdentityServer4.Validation.DefaultCustomTokenValidator
+2018-04-28 16:16:06.392 +02:00 [DBG] Token validation success
+{
+  "ValidateLifetime": true,
+  "AccessTokenType": "Jwt",
+  "ExpectedScope": "openid",
+  "Claims": {
+    "nbf": 1524924965,
+    "exp": 1524928565,
+    "iss": "http://localhost:5000",
+    "aud": [
+      "http://localhost:5000/resources",
+      "api1"
+    ],
+    "client_id": "mvc",
+    "sub": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+    "auth_time": 1524924964,
+    "idp": "local",
+    "scope": [
+      "openid",
+      "profile",
+      "api1",
+      "offline_access"
+    ],
+    "amr": "pwd"
+  }
+}
+2018-04-28 16:16:06.408 +02:00 [DBG] Creating userinfo response
+2018-04-28 16:16:06.426 +02:00 [DBG] Scopes in access token: openid profile api1 offline_access
+2018-04-28 16:16:06.432 +02:00 [DBG] Scopes in access token: openid profile api1 offline_access
+2018-04-28 16:16:06.445 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:16:06.451 +02:00 [DBG] Requested claim types: sub name family_name given_name middle_name nickname preferred_username profile picture website gender birthdate zoneinfo locale updated_at
+2018-04-28 16:16:06.453 +02:00 [DBG] Scopes in access token: openid profile api1 offline_access
+2018-04-28 16:16:06.465 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:16:06.550 +02:00 [INF] Profile service returned to the following claim types: sub name given_name family_name website preferred_username
+2018-04-28 16:16:06.553 +02:00 [DBG] End userinfo request
+2018-04-28 16:16:35.159 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:16:35.164 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:16:38.121 +02:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:16:38.126 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:16:38.129 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:16:38.175 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2018-04-28 16:16:38.177 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2018-04-28 16:16:38.179 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2018-04-28 16:16:38.188 +02:00 [INF] {
+  "Name": "User Logout Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1002,
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "Bob Smith",
+  "ActivityId": "0HLDD29LU61OS:0000000F",
+  "TimeStamp": "2018-04-28T14:16:38Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:16:38.538 +02:00 [DBG] Request path /connect/endsession/callback matched to endpoint type Endsession
+2018-04-28 16:16:38.545 +02:00 [DBG] Endpoint enabled: Endsession, successfully created handler: IdentityServer4.Endpoints.EndSessionCallbackEndpoint
+2018-04-28 16:16:38.547 +02:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.EndSessionCallbackEndpoint for /connect/endsession/callback
+2018-04-28 16:16:38.554 +02:00 [DBG] Processing signout callback request
+2018-04-28 16:16:38.645 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:16:38.647 +02:00 [DBG] No client front-channel logout URLs
+2018-04-28 16:16:38.650 +02:00 [DBG] No client back-channel logout URLs
+2018-04-28 16:16:38.653 +02:00 [INF] Successful signout callback.
+2018-04-28 16:16:38.657 +02:00 [DBG] No client front-channel iframe urls
+2018-04-28 16:16:38.660 +02:00 [DBG] No client back-channel iframe urls
+2018-04-28 16:16:43.106 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:17:11.090 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:17:11.274 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:17:11.276 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 16:17:11.278 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 16:17:11.280 +02:00 [DBG] Adding auth_time claim with value: 1524925031
+2018-04-28 16:17:11.282 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:17:11.329 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD29LU61OS:00000014",
+  "TimeStamp": "2018-04-28T14:17:11Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:17:11.353 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:17:23.280 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:17:34.165 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:17:34.326 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:17:34.328 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 16:17:34.330 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 16:17:34.332 +02:00 [DBG] Adding auth_time claim with value: 1524925054
+2018-04-28 16:17:34.334 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:17:34.380 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD29LU61OS:0000001A",
+  "TimeStamp": "2018-04-28T14:17:34Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:17:34.401 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:17:42.685 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:17:46.928 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:17:51.253 +02:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-04-28 16:17:51.424 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:17:51.426 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 16:17:51.428 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 16:17:51.430 +02:00 [DBG] Adding auth_time claim with value: 1524925071
+2018-04-28 16:17:51.433 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:17:51.485 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD29LU61OS:00000021",
+  "TimeStamp": "2018-04-28T14:17:51Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:17:51.505 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:18:15.274 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 16:18:20.043 +02:00 [DBG] Augmenting SignInContext
+2018-04-28 16:18:20.047 +02:00 [DBG] Adding idp claim with value: local
+2018-04-28 16:18:20.050 +02:00 [DBG] Adding amr claim with value: pwd
+2018-04-28 16:18:20.055 +02:00 [DBG] Adding auth_time claim with value: 1524925100
+2018-04-28 16:18:20.060 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-04-28 16:18:20.115 +02:00 [INF] {
+  "Name": "User Login Success",
+  "Category": "Authentication",
+  "EventType": "Success",
+  "Id": 1000,
+  "Username": "bob",
+  "SubjectId": "5451c1c5-f9c3-4030-a470-da75fb405cda",
+  "DisplayName": "bob",
+  "Endpoint": "UI",
+  "ActivityId": "0HLDD29LU61OS:00000026",
+  "TimeStamp": "2018-04-28T14:18:20Z",
+  "ProcessId": 9088,
+  "LocalIpAddress": "127.0.0.1:23597",
+  "RemoteIpAddress": "::1"
+}
+2018-04-28 16:18:20.137 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:18:20.140 +02:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-04-28 16:18:20.224 +02:00 [DBG] 1 persisted grants found for 5451c1c5-f9c3-4030-a470-da75fb405cda
+2018-04-28 16:18:20.278 +02:00 [DBG] mvc found in database: true
+2018-04-28 16:18:20.290 +02:00 [DBG] Found ["openid","profile"] identity scopes in database
+2018-04-28 16:18:20.308 +02:00 [DBG] Found ["api1"] API scopes in database
+2018-04-28 16:18:43.741 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-04-28 17:14:57.406 +02:00 [WRN] The LINQ expression 'where ([x].Expiration < Convert(DateTime.UtcNow, Nullable`1))' could not be translated and will be evaluated locally.
+2018-04-28 17:14:57.414 +02:00 [WRN] The LINQ expression 'Take(__p_0)' could not be translated and will be evaluated locally.
+2018-04-28 17:14:57.429 +02:00 [INF] Clearing 0 tokens
+2018-04-28 18:14:57.487 +02:00 [INF] Clearing 0 tokens
+2018-04-28 19:14:57.514 +02:00 [INF] Clearing 0 tokens
+2018-04-28 20:14:57.543 +02:00 [INF] Clearing 0 tokens
+2018-04-28 21:14:57.567 +02:00 [INF] Clearing 0 tokens
+2018-04-28 22:14:57.597 +02:00 [INF] Clearing 0 tokens
+2018-04-28 23:14:57.613 +02:00 [INF] Clearing 0 tokens
+2018-04-29 00:14:57.644 +02:00 [INF] Clearing 0 tokens
+2018-04-29 09:14:01.232 +02:00 [INF] Clearing 0 tokens
+2018-04-29 10:14:01.263 +02:00 [INF] Clearing 0 tokens
+2018-04-29 11:14:01.291 +02:00 [INF] Clearing 0 tokens
+2018-04-29 12:14:01.312 +02:00 [INF] Clearing 0 tokens
+2018-04-29 13:14:01.341 +02:00 [INF] Clearing 0 tokens
+2018-04-29 14:14:01.375 +02:00 [INF] Clearing 0 tokens
+2018-04-29 15:14:01.409 +02:00 [INF] Clearing 0 tokens

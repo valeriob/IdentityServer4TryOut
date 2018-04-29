@@ -1,0 +1,12 @@
+{
+  "Required": false,
+  "Emphasize": true,
+  "ShowInDiscoveryDocument": true,
+  "Enabled": true,
+  "Name": "Name",
+  "DisplayName": "Display Name",
+  "Description": "Description",
+  "UserClaims": [
+    "userClaim1"
+  ]
+}
