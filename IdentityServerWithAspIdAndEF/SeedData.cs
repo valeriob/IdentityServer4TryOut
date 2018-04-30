@@ -23,10 +23,15 @@ namespace IdentityServerWithAspIdAndEF
             {
                 scope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
 
+                //{
+                //    var context = scope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                //    context.Database.Migrate();
+                //    EnsureSeedData(context);
+                //}
+
                 {
-                    var context = scope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
-                    context.Database.Migrate();
-                    EnsureSeedData(context);
+                    var store = scope.ServiceProvider.GetRequiredService<OnAuth.ConfigurationStore.InMemoryCacheStore>();
+                    EnsureSeedData(store);
                 }
 
                 {
@@ -105,6 +110,13 @@ namespace IdentityServerWithAspIdAndEF
 
             Console.WriteLine("Done seeding database.");
             Console.WriteLine();
+        }
+
+        private static void EnsureSeedData(OnAuth.ConfigurationStore.InMemoryCacheStore cache)
+        {
+            cache.Seed(Config.GetClients().ToArray());
+            cache.Seed(Config.GetApiResources().ToArray());
+            cache.Seed(Config.GetIdentityResources().ToArray());
         }
 
         private static void EnsureSeedData(ConfigurationDbContext context)

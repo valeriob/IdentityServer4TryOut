@@ -25,12 +25,12 @@ namespace IdentityServerWithAspIdAndEF
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+            string connectionStringSqlServer = Configuration.GetConnectionString("DefaultConnection");
             string DefaultConnectionSqlite = Configuration.GetConnectionString("DefaultConnectionSqlite");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseSqlServer(connectionStringSqlServer));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -54,18 +54,19 @@ namespace IdentityServerWithAspIdAndEF
                 })
                 .AddAspNetIdentity<ApplicationUser>()
                 // this adds the config data from DB (clients, resources)
-                .AddConfigurationStore(options =>
-                {
-                    options.ConfigureDbContext = b =>
-                        b.UseSqlite(DefaultConnectionSqlite,
-                            sql => sql.MigrationsAssembly(migrationsAssembly));
-                })
+                .AddJsonConfigurationStore(config => { })
+                //.AddConfigurationStore(options =>
+                //{
+                //    options.ConfigureDbContext = b =>
+                //        b.UseSqlite(DefaultConnectionSqlite,
+                //            sql => sql.MigrationsAssembly(migrationsAssembly));
+                //})
 
                 // this adds the operational data from DB (codes, tokens, consents)
                 .AddOperationalStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseSqlite(DefaultConnectionSqlite,
+                        b.UseSqlServer(connectionStringSqlServer,
                             sql => sql.MigrationsAssembly(migrationsAssembly));
 
                     // this enables automatic token cleanup. this is optional.

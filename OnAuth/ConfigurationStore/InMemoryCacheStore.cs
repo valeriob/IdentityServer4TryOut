@@ -17,70 +17,102 @@ namespace OnAuth.ConfigurationStore
         public Dictionary<string, IdentityResource> Identity { get; private set; }
         public Dictionary<string, Client> Clients { get; private set; }
 
+        string _basePath;
+
         public InMemoryCacheStore(ConfigurationStoreOptions options)
         {
             _options = options;
-
+            _basePath = Path.Combine(options.BaseFolder, "Configuration");
             LoadClients();
             LoadApiAndIdentity();
         }
 
+        public void Seed(params ApiResource[] apiResources)
+        {
+            foreach (var resource in apiResources)
+                Store(resource);
+        }
+
+        public void Seed(params IdentityResource[] identityResources)
+        {
+            foreach (var resource in identityResources)
+                Store(resource);
+        }
+
+        public void Seed(params Client[] clients)
+        {
+            foreach (var resource in clients)
+                Store(resource);
+        }
+
         void LoadClients()
         {
-            var resourcesFolder = Path.Combine(_options.BaseFolder, "ClientStore");
+            var resourcesFolder = Path.Combine(_basePath, "Client");
             Directory.CreateDirectory(resourcesFolder);
 
-            var clientExample = new Client
-            {
-            };
-            var apiExampleFile = Path.Combine(resourcesFolder, "client.example");
-            File.Delete(apiExampleFile);
-            File.WriteAllText(apiExampleFile, Newtonsoft.Json.JsonConvert.SerializeObject(clientExample, Newtonsoft.Json.Formatting.Indented));
-
+            Store(new Client { ClientId = "client.example" });
 
             Clients = Load<Client>(resourcesFolder).ToDictionary(r => r.ClientId);
         }
 
         void LoadApiAndIdentity()
         {
-            var resourcesFolder = Path.Combine(_options.BaseFolder, "ResourceStore");
-            var apiFolder = Path.Combine(resourcesFolder, "Api");
+            var apiFolder = Path.Combine(_basePath, "Api");
             Directory.CreateDirectory(apiFolder);
-            var identityFolder = Path.Combine(resourcesFolder, "Identity");
+            var identityFolder = Path.Combine(_basePath, "Identity");
             Directory.CreateDirectory(identityFolder);
 
-            var _apiExample = new ApiResource
+            var apiExample = new ApiResource
             {
                 Description = "Description",
                 DisplayName = "Display Name",
                 Enabled = true,
-                Name = "Name",
+                Name = "api.example",
                 UserClaims = new[] { "userClaim1" },
                 Scopes = new[] { new Scope("name", "disp name", new[] { "claim1", }) },
                 ApiSecrets = new[] { new Secret("value", "description", DateTime.Now) },
             };
-            var apiExampleFile = Path.Combine(apiFolder, "api.example");
-            File.Delete(apiExampleFile);
-            File.WriteAllText(apiExampleFile, Newtonsoft.Json.JsonConvert.SerializeObject(_apiExample, Newtonsoft.Json.Formatting.Indented));
+            Store(apiExample);
 
-
-            var _identityExample = new IdentityResource
+            var identityExample = new IdentityResource
             {
                 Description = "Description",
                 DisplayName = "Display Name",
                 Enabled = true,
-                Name = "Name",
+                Name = "identity.example",
                 UserClaims = new[] { "userClaim1" },
                 Emphasize = true,
                 Required = false,
                 ShowInDiscoveryDocument = true,
             };
-            var identityExampleFile = Path.Combine(identityFolder, "identity.example");
-            File.Delete(identityExampleFile);
-            File.WriteAllText(identityExampleFile, Newtonsoft.Json.JsonConvert.SerializeObject(_identityExample, Newtonsoft.Json.Formatting.Indented));
+            Store(identityExample);
 
             Api = Load<ApiResource>(apiFolder).ToDictionary(r => r.Name);
             Identity = Load<IdentityResource>(identityFolder).ToDictionary(r => r.Name);
+        }
+
+        void Store(ApiResource apiResource)
+        {
+            var file = Path.Combine(_basePath, "Api", apiResource.Name + ".json");
+            Store(apiResource, file);
+        }
+
+        void Store(IdentityResource apiResource)
+        {
+            var file = Path.Combine(_basePath, "Identity", apiResource.Name + ".json");
+            Store(apiResource, file);
+        }
+
+        void Store(Client client)
+        {
+            var file = Path.Combine(_basePath, "Client", client.ClientId + ".json");
+            Store(client, file);
+        }
+
+        void Store(object item, string filePath)
+        {
+            File.Delete(filePath);
+            File.WriteAllText(filePath, Newtonsoft.Json.JsonConvert.SerializeObject(item, Newtonsoft.Json.Formatting.Indented));
         }
 
         T[] Load<T>(string folder)
