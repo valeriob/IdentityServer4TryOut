@@ -20,14 +20,13 @@ namespace WebApplication2
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -38,8 +37,8 @@ namespace WebApplication2
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>(identity =>
             {
 
@@ -47,7 +46,7 @@ namespace WebApplication2
             .AddDefaultUI()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -73,7 +72,7 @@ namespace WebApplication2
                   options.Scope.Clear();
                   options.Scope.Add("openid");
                   options.Scope.Add("profile");
-                 // options.Scope.Add("email");
+                  // options.Scope.Add("email");
                   options.Scope.Add("api1");
                   options.Scope.Add("offline_access");
 
@@ -83,7 +82,7 @@ namespace WebApplication2
                   options.GetClaimsFromUserInfoEndpoint = true;
                   options.SaveTokens = true;
 
-                  options.Events.OnMessageReceived += ev => 
+                  options.Events.OnMessageReceived += ev =>
                   {
                       return Task.CompletedTask;
                   };
@@ -107,7 +106,7 @@ namespace WebApplication2
                       RoleClaimType = "role",//JwtClaimTypes.Role,
                   };
               });
-              
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.Configure<Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions>(options =>
             {

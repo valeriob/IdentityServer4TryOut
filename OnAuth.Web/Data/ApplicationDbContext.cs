@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace IdentityServerWithAspIdAndEF.Data
+namespace OnAuth.Web.Data
 {
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {

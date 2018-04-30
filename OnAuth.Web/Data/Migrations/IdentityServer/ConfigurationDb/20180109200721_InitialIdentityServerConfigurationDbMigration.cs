@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace IdentityServerWithAspIdAndEF.Data.Migrations.IdentityServer.ConfigurationDb
+namespace OnAuth.Web.Data.Migrations.IdentityServer.ConfigurationDb
 {
     public partial class InitialIdentityServerConfigurationDbMigration : Migration
     {

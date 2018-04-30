@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using IdentityServerWithAspIdAndEF.Data;
+using OnAuth.Web.Data;
 using System.Reflection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace IdentityServerWithAspIdAndEF
+namespace OnAuth.Web
 {
     public class Startup
     {

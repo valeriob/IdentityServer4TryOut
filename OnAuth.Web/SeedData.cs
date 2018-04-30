@@ -4,12 +4,12 @@ using System.Security.Claims;
 using IdentityModel;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Mappers;
-using IdentityServerWithAspIdAndEF.Data;
+using OnAuth.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IdentityServerWithAspIdAndEF
+namespace OnAuth.Web
 {
     public class SeedData
     {
