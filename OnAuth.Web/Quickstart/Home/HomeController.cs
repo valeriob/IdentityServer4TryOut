@@ -1,4 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace IdentityServer4.Quickstart.UI
 {
     [SecurityHeaders]
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         private readonly IIdentityServerInteractionService _interaction;
 
@@ -18,7 +18,7 @@ namespace IdentityServer4.Quickstart.UI
             _interaction = interaction;
         }
 
-        public IActionResult Index()
+        public virtual IActionResult Index()
         {
             return View();
         }
@@ -26,7 +26,7 @@ namespace IdentityServer4.Quickstart.UI
         /// <summary>
         /// Shows the error page
         /// </summary>
-        public async Task<IActionResult> Error(string errorId)
+        public async virtual Task<IActionResult> Error(string errorId)
         {
             var vm = new ErrorViewModel();
 

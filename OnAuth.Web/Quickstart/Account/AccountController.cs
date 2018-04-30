@@ -1,4 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace IdentityServer4.Quickstart.UI
 {
     [SecurityHeaders]
-    public class AccountController : Controller
+    public partial class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -52,7 +52,7 @@ namespace IdentityServer4.Quickstart.UI
         /// Show login page
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> Login(string returnUrl)
+        public async virtual Task<IActionResult> Login(string returnUrl)
         {
             // build a model so we know what to show on the login page
             var vm = await BuildLoginViewModelAsync(returnUrl);
@@ -71,7 +71,7 @@ namespace IdentityServer4.Quickstart.UI
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginInputModel model, string button)
+        public async virtual Task<IActionResult> Login(LoginInputModel model, string button)
         {
             if (button != "login")
             {
@@ -126,7 +126,7 @@ namespace IdentityServer4.Quickstart.UI
         /// initiate roundtrip to external authentication provider
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
+        public async virtual Task<IActionResult> ExternalLogin(string provider, string returnUrl)
         {
             if (AccountOptions.WindowsAuthenticationSchemeName == provider)
             {
@@ -153,7 +153,7 @@ namespace IdentityServer4.Quickstart.UI
         /// Post processing of external authentication
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ExternalLoginCallback()
+        public async virtual Task<IActionResult> ExternalLoginCallback()
         {
             // read external identity from the temporary cookie
             var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
@@ -207,7 +207,7 @@ namespace IdentityServer4.Quickstart.UI
         /// Show logout page
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> Logout(string logoutId)
+        public async virtual Task<IActionResult> Logout(string logoutId)
         {
             // build a model so the logout page knows what to display
             var vm = await BuildLogoutViewModelAsync(logoutId);
@@ -227,7 +227,7 @@ namespace IdentityServer4.Quickstart.UI
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Logout(LogoutInputModel model)
+        public async virtual Task<IActionResult> Logout(LogoutInputModel model)
         {
             // build a model so the logged out page knows what to display
             var vm = await BuildLoggedOutViewModelAsync(model.LogoutId);

@@ -1,0 +1,19 @@
+{
+  "ApiSecrets": [],
+  "Scopes": [
+    {
+      "Name": "api1",
+      "DisplayName": "My API",
+      "Description": null,
+      "Required": false,
+      "Emphasize": false,
+      "ShowInDiscoveryDocument": true,
+      "UserClaims": []
+    }
+  ],
+  "Enabled": true,
+  "Name": "api1",
+  "DisplayName": "My API",
+  "Description": null,
+  "UserClaims": []
+}

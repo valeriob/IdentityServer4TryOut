@@ -85,13 +85,14 @@ namespace OnAuth.Web
 
             services.ConfigureApplicationCookie(cookie => 
             {
-
+                cookie.Cookie.Name = "OnAuth";
             });
             services.AddAuthentication()
                   //.AddCookie(IdentityServer4.IdentityServerConstants.DefaultCookieAuthenticationScheme,options =>
                   //{
                   //    options.Cookie.Name = "onauth";
                   //})
+                  /*
                 .AddGoogle(options =>
                 {
                     options.ClientId = "708996912208-9m4dkjb5hscn7cjrn5u0r4tbgkbj1fko.apps.googleusercontent.com";
@@ -108,7 +109,9 @@ namespace OnAuth.Web
                         NameClaimType = "name",
                         RoleClaimType = "role"
                     };
-                });
+                })
+                */
+                ;
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
