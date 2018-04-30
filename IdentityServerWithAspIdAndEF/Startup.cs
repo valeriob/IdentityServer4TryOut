@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IdentityServerWithAspIdAndEF.Data;
-using IdentityServerWithAspIdAndEF.Models;
 using System.Reflection;
 using Microsoft.IdentityModel.Tokens;
 
@@ -32,7 +31,7 @@ namespace IdentityServerWithAspIdAndEF
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionStringSqlServer));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -52,7 +51,7 @@ namespace IdentityServerWithAspIdAndEF
                     options.Events.RaiseSuccessEvents = true;
                     //options.Authentication.CheckSessionCookieName = "onauth";
                 })
-                .AddAspNetIdentity<ApplicationUser>()
+                .AddAspNetIdentity<IdentityUser>()
                 // this adds the config data from DB (clients, resources)
                 .AddJsonConfigurationStore(config => { })
                 //.AddConfigurationStore(options =>
