@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnAuth.Web", "OnAuth.Web\On
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnAuth.Users.Web", "OnAuth.Users.Web\OnAuth.Users.Web.csproj", "{8CB69BF1-5338-4824-AB35-C1E72BD06D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnAuth.Migrate", "OnAuth.Migrate\OnAuth.Migrate.csproj", "{279B603B-AE3E-49A0-A24E-6A676CA8AE72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnAuth.Migrate", "OnAuth.Migrate\OnAuth.Migrate.csproj", "{279B603B-AE3E-49A0-A24E-6A676CA8AE72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnAuth.Ldap.Web", "OnAuth.Ldap.Web\OnAuth.Ldap.Web.csproj", "{7A3CB92C-DCC2-4653-8FEB-079B0AAD19CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{279B603B-AE3E-49A0-A24E-6A676CA8AE72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279B603B-AE3E-49A0-A24E-6A676CA8AE72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279B603B-AE3E-49A0-A24E-6A676CA8AE72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3CB92C-DCC2-4653-8FEB-079B0AAD19CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3CB92C-DCC2-4653-8FEB-079B0AAD19CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3CB92C-DCC2-4653-8FEB-079B0AAD19CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3CB92C-DCC2-4653-8FEB-079B0AAD19CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
