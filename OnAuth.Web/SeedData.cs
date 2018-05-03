@@ -115,6 +115,8 @@ namespace OnAuth.Web
             cache.Seed(Config.GetClients().ToArray());
             cache.Seed(Config.GetApiResources().ToArray());
             cache.Seed(Config.GetIdentityResources().ToArray());
+
+            cache.Refresh();
         }
 
         private static void EnsureSeedData(ConfigurationDbContext context)

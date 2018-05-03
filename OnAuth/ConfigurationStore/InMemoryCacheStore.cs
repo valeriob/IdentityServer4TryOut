@@ -124,5 +124,11 @@ namespace OnAuth.ConfigurationStore
             }).ToArray();
             return result;
         }
+
+        public void Refresh()
+        {
+            LoadClients();
+            LoadApiAndIdentity();
+        }
     }
 }

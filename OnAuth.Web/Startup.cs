@@ -71,7 +71,8 @@ namespace OnAuth.Web
                     // this enables automatic token cleanup. this is optional.
                     options.EnableTokenCleanup = true;
                     // options.TokenCleanupInterval = 15; // frequency in seconds to cleanup stale grants. 15 is useful during debugging
-                });
+                })
+                ;
 
 
             if (Environment.IsDevelopment())
