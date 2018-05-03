@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reactive.Subjects;
+using System.Reactive.Linq;
 using System.Text;
+using System.Threading;
 
 namespace OnAuth.ConfigurationStore
 {
-
     public class InMemoryCacheStore
     {
         ConfigurationStoreOptions _options;
@@ -18,14 +20,45 @@ namespace OnAuth.ConfigurationStore
         public Dictionary<string, Client> Clients { get; private set; }
 
         string _basePath;
+        string _clientsPath;
+        string _apiPath;
+        string _identityPath;
+
+        FileSystemWatcher _fsw;
+        Subject<int> _changes;
 
         public InMemoryCacheStore(ConfigurationStoreOptions options)
         {
             _options = options;
             _basePath = Path.Combine(options.BaseFolder, "Configuration");
-            LoadClients();
-            LoadApiAndIdentity();
+            _clientsPath = Path.Combine(_basePath, "Client");
+            _apiPath = Path.Combine(_basePath, "Api");
+            _identityPath = Path.Combine(_basePath, "Identity");
+
+            SeedSamples();
+
+            LoadAll();
+
+            _changes = new Subject<int>();
+            _changes.Throttle(TimeSpan.FromSeconds(1)).Subscribe(_ =>
+            {
+                LoadAll();
+            });
+
+            _fsw = new FileSystemWatcher(_basePath, "*.json");
+            _fsw.IncludeSubdirectories = true;
+            _fsw.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.CreationTime;
+            _fsw.Changed += FileChanged;
+            _fsw.Created += FileChanged;
+            _fsw.Deleted += FileChanged;
+            _fsw.EnableRaisingEvents = true;
         }
+
+        void FileChanged(object sender, FileSystemEventArgs e)
+        {
+            _changes.OnNext(1);
+        }
+
 
         public void Seed(params ApiResource[] apiResources)
         {
@@ -45,22 +78,15 @@ namespace OnAuth.ConfigurationStore
                 Store(resource);
         }
 
-        void LoadClients()
+        void SeedSamples()
         {
-            var resourcesFolder = Path.Combine(_basePath, "Client");
-            Directory.CreateDirectory(resourcesFolder);
+            Directory.CreateDirectory(_clientsPath);
 
             Store(new Client { ClientId = "client.example" });
 
-            Clients = Load<Client>(resourcesFolder).ToDictionary(r => r.ClientId);
-        }
 
-        void LoadApiAndIdentity()
-        {
-            var apiFolder = Path.Combine(_basePath, "Api");
-            Directory.CreateDirectory(apiFolder);
-            var identityFolder = Path.Combine(_basePath, "Identity");
-            Directory.CreateDirectory(identityFolder);
+            Directory.CreateDirectory(_apiPath);
+            Directory.CreateDirectory(_identityPath);
 
             var apiExample = new ApiResource
             {
@@ -86,26 +112,31 @@ namespace OnAuth.ConfigurationStore
                 ShowInDiscoveryDocument = true,
             };
             Store(identityExample);
-
-            Api = Load<ApiResource>(apiFolder).ToDictionary(r => r.Name);
-            Identity = Load<IdentityResource>(identityFolder).ToDictionary(r => r.Name);
         }
+
+        void LoadAll()
+        {
+            Clients = Load<Client>(_clientsPath).ToDictionary(r => r.ClientId);
+            Api = Load<ApiResource>(_apiPath).ToDictionary(r => r.Name);
+            Identity = Load<IdentityResource>(_identityPath).ToDictionary(r => r.Name);
+        }
+
 
         void Store(ApiResource apiResource)
         {
-            var file = Path.Combine(_basePath, "Api", apiResource.Name + ".json");
+            var file = Path.Combine(_apiPath, apiResource.Name + ".json");
             Store(apiResource, file);
         }
 
         void Store(IdentityResource apiResource)
         {
-            var file = Path.Combine(_basePath, "Identity", apiResource.Name + ".json");
+            var file = Path.Combine(_identityPath, apiResource.Name + ".json");
             Store(apiResource, file);
         }
 
         void Store(Client client)
         {
-            var file = Path.Combine(_basePath, "Client", client.ClientId + ".json");
+            var file = Path.Combine(_clientsPath, client.ClientId + ".json");
             Store(client, file);
         }
 
@@ -127,8 +158,8 @@ namespace OnAuth.ConfigurationStore
 
         public void Refresh()
         {
-            LoadClients();
-            LoadApiAndIdentity();
+            LoadAll();
         }
+
     }
 }
