@@ -35,6 +35,13 @@ namespace OnAuth.Web
             {
                 new Client
                 {
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "ontms"
+                    },
                     ClientId = "client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
 

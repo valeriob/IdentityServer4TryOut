@@ -14,28 +14,23 @@ namespace OnAuth.ConfigurationStore
         InMemoryCacheStore _store;
         ILogger<ClientStore> _logger;
 
-        Dictionary<string, ApiResource> _api;
-        Dictionary<string, IdentityResource> _identity;
 
         public ResourceStore(InMemoryCacheStore store, ILogger<ClientStore> logger)
         {
             _store = store ?? throw new ArgumentNullException(nameof(store));
             _logger = logger;
-
-            _api = store.Api;
-            _identity = store.Identity;
         }
 
 
         public Task<ApiResource> FindApiResourceAsync(string name)
         {
-            _api.TryGetValue(name, out ApiResource r);
+            _store.Api.TryGetValue(name, out ApiResource r);
             return Task.FromResult(r);
         }
 
         public Task<IEnumerable<ApiResource>> FindApiResourcesByScopeAsync(IEnumerable<string> scopeNames)
         {
-            var result = from api in _api.Values
+            var result = from api in _store.Api.Values
                          where api.Scopes.Where(x => scopeNames.Contains(x.Name)).Any()
                          select api;
             return Task.FromResult(result);
@@ -43,13 +38,13 @@ namespace OnAuth.ConfigurationStore
 
         public Task<IEnumerable<IdentityResource>> FindIdentityResourcesByScopeAsync(IEnumerable<string> scopeNames)
         {
-            var result = _identity.Values.Where(i => scopeNames.Contains(i.Name));
+            var result = _store.Identity.Values.Where(i => scopeNames.Contains(i.Name));
             return Task.FromResult(result);
         }
 
         public Task<Resources> GetAllResourcesAsync()
         {
-            var result = new Resources(_identity.Values, _api.Values);
+            var result = new Resources(_store.Identity.Values, _store.Api.Values);
             return Task.FromResult(result);
         }
     }

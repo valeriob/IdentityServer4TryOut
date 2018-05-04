@@ -12,20 +12,17 @@ namespace OnAuth.ConfigurationStore
     {
         InMemoryCacheStore _store;
         ILogger<ClientStore> _logger;
-        Dictionary<string, Client> _clients;
 
         public ClientStore(InMemoryCacheStore store, ILogger<ClientStore> logger)
         {
             _store = store ?? throw new ArgumentNullException(nameof(store));
             _logger = logger;
-
-            _clients = store.Clients;
         }
 
 
         public Task<Client> FindClientByIdAsync(string clientId)
         {
-            _clients.TryGetValue(clientId, out Client result);
+            _store.Clients.TryGetValue(clientId, out Client result);
             return Task.FromResult(result);
         }
     }

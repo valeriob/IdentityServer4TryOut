@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.DirectoryServices.Protocols;
+using System.Linq;
 using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -86,7 +87,6 @@ namespace OnAuth.LDAP
             {
                 if (!directoryObject.Properties.Contains(PropertyNames.sAMAccountName))
                 {
-
                     throw new Exception($"GetUser, username {username} !directoryObject.Properties.Contains(PropertyNames.sAMAccountName)");
                 }
                 ldapUsername = directoryObject.Properties[PropertyNames.sAMAccountName].Value.ToString();
@@ -118,6 +118,46 @@ namespace OnAuth.LDAP
             }
 
         }
+
+        public LdapUser FindBySubject(string subject)
+        {
+            var entry = CreateEntry(_serverAddress);
+
+            using (var mySearcher = new DirectorySearcher(entry))
+            {
+                mySearcher.SearchScope = System.DirectoryServices.SearchScope.Subtree;
+                //mySearcher.Filter = "(&(objectClass=user)(|(cn=" + username + ")(sAMAccountName=" + username + ")))";
+                string queryGuid = Guid2OctetString(subject);
+                mySearcher.Filter = "(&(objectClass=user)(objectGUID=" + queryGuid + "))";
+
+                var result = mySearcher.FindOne();
+                var directoryObject = result.GetDirectoryEntry();
+
+                var ldapUsername = LdapUsername(directoryObject, subject);
+
+                return new LdapUser
+                {
+                    SubjectId = directoryObject.Guid.ToString(),
+                    Username = ldapUsername,
+                };
+            }
+
+        }
+
+
+
+        static string Guid2OctetString(string objectGuid)
+        {
+            var guid = new Guid(objectGuid);
+            byte[] byteGuid = guid.ToByteArray();
+            string queryGuid = "";
+            foreach (byte b in byteGuid)
+            {
+                queryGuid += @"\" + b.ToString("x2");
+            }
+            return queryGuid;
+        }
+
 
         public LdapUser FindByExternalProvider(string provider, string providerUserId)
         {
@@ -160,12 +200,18 @@ namespace OnAuth.LDAP
 
         public Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
-            throw new NotImplementedException();
+            var subject = context.Subject.Claims.Where(c => c.Type == "sub").Select(r => r.Value).FirstOrDefault();
+            var user = _ldapUserStore.FindBySubject(subject);
+
+            context.AddRequestedClaims(new[] { new Claim("preferred_username", user.Username), new Claim("role", "Administrator") });
+            return Task.CompletedTask;
         }
 
         public Task IsActiveAsync(IsActiveContext context)
         {
-            throw new NotImplementedException();
+            context.IsActive = true;
+            return Task.CompletedTask;
+            // throw new NotImplementedException();
         }
     }
 
@@ -180,7 +226,19 @@ namespace OnAuth.LDAP
 
         public Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
         {
-            throw new NotImplementedException();
+            var valid = _ldapUserStore.ValidateCredentials(context.UserName, context.Password);
+
+            if (valid)
+            {
+                var user = _ldapUserStore.FindByUsername(context.UserName);
+                context.Result = new GrantValidationResult(user.SubjectId, "Password");
+            }
+            else
+            {
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidRequest);
+            }
+
+            return Task.CompletedTask;
         }
     }
 }
