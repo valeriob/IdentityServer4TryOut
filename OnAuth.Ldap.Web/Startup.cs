@@ -24,6 +24,7 @@ namespace OnAuth.Ldap.Web
                 //.AddTestUsers(Config.GetUsers())
                 .AddJsonConfigurationStore()
                 .AddLdapUserStore()
+                .AddLdapUserStore()
                 ;
 
             services.AddAuthentication()
