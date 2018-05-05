@@ -1,15 +1,15 @@
-﻿using OnAuth.LDAP;
+﻿using OnAuth.LDAPUserStore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class LdapIdentityServerBuilderExtensions
+    public static class LDAPIdentityServerBuilderExtensions
     {
         public static IIdentityServerBuilder AddLdapUserStore(this IIdentityServerBuilder builder)
         {
-            builder.Services.AddSingleton(new LdapUserStore());
+            builder.Services.AddSingleton<LdapUserStore>();
             builder.AddProfileService<ProfileService>();
             builder.AddResourceOwnerValidator<CustomResourceOwnerPasswordValidator>();
 

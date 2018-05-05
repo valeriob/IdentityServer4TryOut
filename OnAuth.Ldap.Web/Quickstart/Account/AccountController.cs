@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Authentication;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
-using OnAuth.LDAP;
+using OnAuth.LDAPUserStore;
 
 namespace IdentityServer4.Quickstart.UI
 {

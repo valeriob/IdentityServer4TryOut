@@ -1,0 +1,30 @@
+{
+  "ApiSecrets": [
+    {
+      "Description": "description",
+      "Value": "value",
+      "Expiration": "2018-05-04T18:44:56.5275772+02:00",
+      "Type": "SharedSecret"
+    }
+  ],
+  "Scopes": [
+    {
+      "Name": "name",
+      "DisplayName": "disp name",
+      "Description": null,
+      "Required": false,
+      "Emphasize": false,
+      "ShowInDiscoveryDocument": true,
+      "UserClaims": [
+        "claim1"
+      ]
+    }
+  ],
+  "Enabled": true,
+  "Name": "api.example",
+  "DisplayName": "Display Name",
+  "Description": "Description",
+  "UserClaims": [
+    "userClaim1"
+  ]
+}

@@ -1,6 +1,7 @@
 ﻿using IdentityServer4.Models;
 using IdentityServer4.Services;
 using IdentityServer4.Validation;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
@@ -10,27 +11,21 @@ using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace OnAuth.LDAP
+namespace OnAuth.LDAPUserStore
 {
     public partial class LdapUserStore
     {
-        string _queryUsername;
-        string _queryPassword;
-        string _serverAddress;
+        IOptions<LDAPUserStoreOptions> _configuration;
 
-        public LdapUserStore()
+        public LdapUserStore(IOptions<LDAPUserStoreOptions> configuration)
         {
-            Init();
+            _configuration = configuration;
         }
-
-        partial void Init();
-
-
 
 
         public bool ValidateCredentials(string username, string password)
         {
-            using (var connection = new LdapConnection(_serverAddress))
+            using (var connection = new LdapConnection(_configuration.Value.ServerAddress))
             {
                 var credential = new NetworkCredential(username, password);
                 connection.Credential = credential;
@@ -51,8 +46,8 @@ namespace OnAuth.LDAP
         {
             serverAddress = "LDAP://" + serverAddress;
             DirectoryEntry entry;
-            if (!string.IsNullOrWhiteSpace(_queryUsername) && !string.IsNullOrWhiteSpace(_queryPassword))
-                entry = new DirectoryEntry(serverAddress, _queryUsername, _queryPassword);
+            if (!string.IsNullOrWhiteSpace(_configuration.Value.Username) && !string.IsNullOrWhiteSpace(_configuration.Value.Password))
+                entry = new DirectoryEntry(serverAddress, _configuration.Value.Username, _configuration.Value.Password);
             else
                 entry = new DirectoryEntry(serverAddress);
             return entry;
@@ -97,7 +92,7 @@ namespace OnAuth.LDAP
 
         public LdapUser FindByUsername(string username)
         {
-            var entry = CreateEntry(_serverAddress);
+            var entry = CreateEntry(_configuration.Value.ServerAddress);
 
             using (var mySearcher = new DirectorySearcher(entry))
             {
@@ -121,7 +116,7 @@ namespace OnAuth.LDAP
 
         public LdapUser FindBySubject(string subject)
         {
-            var entry = CreateEntry(_serverAddress);
+            var entry = CreateEntry(_configuration.Value.ServerAddress);
 
             using (var mySearcher = new DirectorySearcher(entry))
             {

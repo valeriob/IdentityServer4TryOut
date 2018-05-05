@@ -27,7 +27,7 @@ namespace OnAuth.Web
             string connectionStringSqlServer = Configuration.GetConnectionString("DefaultConnection");
             string DefaultConnectionSqlite = Configuration.GetConnectionString("DefaultConnectionSqlite");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-
+           
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionStringSqlServer));
 
