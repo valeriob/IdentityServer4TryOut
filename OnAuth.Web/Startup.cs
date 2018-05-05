@@ -53,7 +53,7 @@ namespace OnAuth.Web
                 })
                 .AddAspNetIdentity<IdentityUser>()
                 // this adds the config data from DB (clients, resources)
-                .AddJsonConfigurationStore(config => { })
+                .AddJsonFilesConfigurationStore(config => { })
                 //.AddConfigurationStore(options =>
                 //{
                 //    options.ConfigureDbContext = b =>

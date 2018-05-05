@@ -9,7 +9,7 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IIdentityServerBuilder AddLdapUserStore(this IIdentityServerBuilder builder)
         {
-            builder.Services.AddSingleton<LdapUserStore>();
+            builder.Services.AddSingleton<LDAPUserStore>();
             builder.AddProfileService<ProfileService>();
             builder.AddResourceOwnerValidator<CustomResourceOwnerPasswordValidator>();
 

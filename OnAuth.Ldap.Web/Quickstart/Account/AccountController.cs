@@ -30,7 +30,7 @@ namespace IdentityServer4.Quickstart.UI
     [SecurityHeaders]
     public class AccountController : Controller
     {
-        private readonly LdapUserStore _users;
+        private readonly LDAPUserStore _users;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
@@ -41,7 +41,7 @@ namespace IdentityServer4.Quickstart.UI
             IClientStore clientStore,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            LdapUserStore users)
+            LDAPUserStore users)
         {
             _users = users;
 

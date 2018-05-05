@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnAuth.ConfigurationStore
+namespace OnAuth.JSonFilesConfigurationStore
 {
-    public class ClientStore : IClientStore
+    public class JSonFilesClientStore : IClientStore
     {
-        InMemoryCacheStore _store;
-        ILogger<ClientStore> _logger;
+        JSonFilesInMemoryCache _store;
+        ILogger<JSonFilesClientStore> _logger;
 
-        public ClientStore(InMemoryCacheStore store, ILogger<ClientStore> logger)
+        public JSonFilesClientStore(JSonFilesInMemoryCache store, ILogger<JSonFilesClientStore> logger)
         {
             _store = store ?? throw new ArgumentNullException(nameof(store));
             _logger = logger;

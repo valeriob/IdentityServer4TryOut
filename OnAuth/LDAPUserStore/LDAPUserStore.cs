@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace OnAuth.LDAPUserStore
 {
-    public partial class LdapUserStore
+    public partial class LDAPUserStore
     {
         IOptions<LDAPUserStoreOptions> _configuration;
 
-        public LdapUserStore(IOptions<LDAPUserStoreOptions> configuration)
+        public LDAPUserStore(IOptions<LDAPUserStoreOptions> configuration)
         {
             _configuration = configuration;
         }
@@ -185,9 +185,9 @@ namespace OnAuth.LDAPUserStore
 
     class ProfileService : IProfileService
     {
-        LdapUserStore _ldapUserStore;
+        LDAPUserStore _ldapUserStore;
 
-        public ProfileService(LdapUserStore ldapUserStore)
+        public ProfileService(LDAPUserStore ldapUserStore)
         {
             _ldapUserStore = ldapUserStore;
         }
@@ -212,9 +212,9 @@ namespace OnAuth.LDAPUserStore
 
     class CustomResourceOwnerPasswordValidator : IResourceOwnerPasswordValidator
     {
-        LdapUserStore _ldapUserStore;
+        LDAPUserStore _ldapUserStore;
 
-        public CustomResourceOwnerPasswordValidator(LdapUserStore ldapUserStore)
+        public CustomResourceOwnerPasswordValidator(LDAPUserStore ldapUserStore)
         {
             _ldapUserStore = ldapUserStore;
         }

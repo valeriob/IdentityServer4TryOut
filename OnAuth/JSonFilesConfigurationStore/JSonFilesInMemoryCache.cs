@@ -9,9 +9,9 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading;
 
-namespace OnAuth.ConfigurationStore
+namespace OnAuth.JSonFilesConfigurationStore
 {
-    public class InMemoryCacheStore
+    public class JSonFilesInMemoryCache
     {
         ConfigurationStoreOptions _options;
 
@@ -27,7 +27,7 @@ namespace OnAuth.ConfigurationStore
         FileSystemWatcher _fsw;
         Subject<int> _changes;
 
-        public InMemoryCacheStore(ConfigurationStoreOptions options)
+        public JSonFilesInMemoryCache(ConfigurationStoreOptions options)
         {
             _options = options;
             _basePath = Path.Combine(options.BaseFolder, "Configuration");

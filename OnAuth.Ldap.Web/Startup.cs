@@ -30,7 +30,7 @@ namespace OnAuth.Ldap.Web
                 //.AddInMemoryClients(Config.GetClients())
                 //.AddTestUsers(Config.GetUsers())
                 .AddLdapUserStore()
-                .AddJsonConfigurationStore()
+                .AddJsonFilesConfigurationStore()
                 .AddLMDBPersistedGrantStore()
                 ;
 

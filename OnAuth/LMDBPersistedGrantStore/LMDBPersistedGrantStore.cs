@@ -151,9 +151,7 @@ namespace OnAuth.PersistentGrants
 
         void ProcessGrantsBySubjectId(string subjectId, LightningTransaction tx, LightningDatabase mainDb, LightningDatabase indexDb, Action<LightningCursor> callback)
         {
-            var result = new List<PersistedGrant>();
             var subjectIdBytes = Encoding.UTF8.GetBytes(subjectId);
-
             using (var cursor = tx.CreateCursor(indexDb))
             {
                 if (cursor.MoveTo(subjectIdBytes))
@@ -180,7 +178,6 @@ namespace OnAuth.PersistentGrants
         {
             var env = new LightningEnvironment(path);
             env.MaxDatabases = 2;
-            //env.MapSize = 1024 * 1024 * 128;
             env.Open();
             return env;
         }

@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnAuth.ConfigurationStore
+namespace OnAuth.JSonFilesConfigurationStore
 {
-    public class CorsPolicyService : ICorsPolicyService
+    public class JSonFilesCorsPolicyService : ICorsPolicyService
     {
         readonly IHttpContextAccessor _context;
-        readonly ILogger<CorsPolicyService> _logger;
+        readonly ILogger<JSonFilesCorsPolicyService> _logger;
 
-        public CorsPolicyService(IHttpContextAccessor context, ILogger<CorsPolicyService> logger)
+        public JSonFilesCorsPolicyService(IHttpContextAccessor context, ILogger<JSonFilesCorsPolicyService> logger)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _logger = logger;

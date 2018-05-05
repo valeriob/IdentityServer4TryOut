@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnAuth.ConfigurationStore
+namespace OnAuth.JSonFilesConfigurationStore
 {
-    public class ResourceStore : IResourceStore
+    public class JSonFilesResourceStore : IResourceStore
     {
-        InMemoryCacheStore _store;
-        ILogger<ClientStore> _logger;
+        JSonFilesInMemoryCache _store;
+        ILogger<JSonFilesClientStore> _logger;
 
 
-        public ResourceStore(InMemoryCacheStore store, ILogger<ClientStore> logger)
+        public JSonFilesResourceStore(JSonFilesInMemoryCache store, ILogger<JSonFilesClientStore> logger)
         {
             _store = store ?? throw new ArgumentNullException(nameof(store));
             _logger = logger;

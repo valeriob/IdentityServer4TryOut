@@ -28,7 +28,7 @@ namespace OnAuth.Web
                 //}
 
                 {
-                    var store = scope.ServiceProvider.GetRequiredService<OnAuth.ConfigurationStore.InMemoryCacheStore>();
+                    var store = scope.ServiceProvider.GetRequiredService<OnAuth.JSonFilesConfigurationStore.JSonFilesInMemoryCache>();
                     EnsureSeedData(store);
                 }
 
@@ -110,7 +110,7 @@ namespace OnAuth.Web
             Console.WriteLine();
         }
 
-        private static void EnsureSeedData(OnAuth.ConfigurationStore.InMemoryCacheStore cache)
+        private static void EnsureSeedData(OnAuth.JSonFilesConfigurationStore.JSonFilesInMemoryCache cache)
         {
             cache.Seed(Config.GetClients().ToArray());
             cache.Seed(Config.GetApiResources().ToArray());
